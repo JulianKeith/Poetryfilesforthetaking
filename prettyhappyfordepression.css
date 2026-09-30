@@ -1,0 +1,213 @@
+body {
+    background-color: #E8DDC8;
+    font-family: 'Unkempt', cursive;
+}
+
+.first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 10px;
+}
+
+.first ul {
+    display: flex;
+    list-style: none;
+    gap: 45px;
+    margin: 0;
+    padding: 0;
+}
+
+.first a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #534f45;
+}
+
+.first a:hover {
+    color: #1a1715;
+}
+
+.cover {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.poem-box-1,
+.poem-box-2,
+.poem-box-3,
+.poem-box-4,
+.poem-box-5,
+.poem-box-6,
+.poem-box-7,
+.poem-box-8,
+.poem-box-9,
+.poem-box-10 {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.poem-box-1 {
+    background: linear-gradient(to bottom, #F7B6D2, #F28DB8);
+}
+
+.poem-box-2 {
+    background: linear-gradient(to bottom, #F28DB8, #E85D9E);
+}
+
+.poem-box-3 {
+    background: linear-gradient(to bottom, #E85D9E, #A84B91);
+}
+
+.poem-box-4 {
+    background: linear-gradient(to bottom, #A84B91, #5B4A8F);
+}
+
+.poem-box-5 {
+    background: linear-gradient(to bottom, #5B4A8F, #343B70);
+}
+
+.poem-box-6 {
+    background: linear-gradient(to bottom, #343B70, #252C58);
+}
+
+.poem-box-7 {
+    background: linear-gradient(to bottom, #252C58, #171D3D);
+}
+
+.poem-box-8 {
+    background: linear-gradient(to bottom, #171D3D, #0B1025);
+}
+
+.poem-box-9 {
+    background: linear-gradient(to bottom, #0B1025, #07070A);
+}
+
+.poem-box-10 {
+    background: linear-gradient(
+        180deg,
+        #050505 0%,
+        #050505 15%,
+        #251006 25%,
+        #3A1808 40%,
+        #7A2B08 60%,
+        #A83D0A 75%,
+        #F28C28 90%,
+        #FFB347 100%
+    );
+}
+
+.poem-box-1 input,
+.poem-box-2 input,
+.poem-box-3 input,
+.poem-box-4 input,
+.poem-box-5 input,
+.poem-box-6 input,
+.poem-box-7 input,
+.poem-box-8 input,
+.poem-box-9 input,
+.poem-box-10 input {
+    display: none;
+}
+
+.poem-box-1 label {
+    font-family: 'Pacifico', cursive;
+}
+
+.poem-box-2 label {
+    font-family: 'Bungee', cursive;
+}
+
+.poem-box-3 label {
+    font-family: 'Righteous', sans-serif;
+}
+
+.poem-box-4 label {
+    font-family: 'Playfair Display', serif;
+}
+
+.poem-box-5 label {
+    font-family: 'Special Elite', cursive;
+}
+
+.poem-box-6 label {
+    font-family: 'Caveat', cursive;
+}
+
+.poem-box-7 label {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.poem-box-8 label {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.poem-box-9 label {
+    font-family: 'Abril Fatface', serif;
+}
+
+.poem-box-10 label {
+    font-family: 'UnifrakturCook', cursive;
+}
+.poem-box-1 label,
+.poem-box-2 label,
+.poem-box-3 label,
+.poem-box-4 label,
+.poem-box-5 label,
+.poem-box-6 label,
+.poem-box-7 label,
+.poem-box-8 label,
+.poem-box-9 label,
+.poem-box-10 label {
+    display: block;
+    padding: 20px;
+    color: #fff5f7;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.poem-content {
+    font-family: 'Unkempt', serif;
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    transition:
+        max-height 0.8s ease,
+        opacity 0.5s ease;
+
+    color: #fff5f7;
+    white-space: pre-line;
+    line-height: 1.2;
+}
+.poem-box-1 input:checked ~ .poem-content,
+.poem-box-2 input:checked ~ .poem-content,
+.poem-box-3 input:checked ~ .poem-content,
+.poem-box-4 input:checked ~ .poem-content,
+.poem-box-5 input:checked ~ .poem-content,
+.poem-box-6 input:checked ~ .poem-content,
+.poem-box-7 input:checked ~ .poem-content,
+.poem-box-8 input:checked ~ .poem-content,
+.poem-box-9 input:checked ~ .poem-content,
+.poem-box-10 input:checked ~ .poem-content {
+    max-height: 5000px;
+    opacity: 1;
+}
+
+.sect {
+    margin-bottom: 20px;
+}
+
+#introduction {
+    text-align: center;
+    background-color: #cebfa3;
+    color: #2F2925;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
