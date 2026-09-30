@@ -48,7 +48,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #2F2925;
+    color: #ffffff;
 }
 
 .banner-text h1 {
@@ -57,6 +57,12 @@ body {
 
 .banner-text, .banner-text p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.main-content {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .poem-box {
@@ -87,7 +93,7 @@ body {
     transition: max-height 0.8s ease, opacity 0.5s ease;
     color: #2F2925;
     white-space: pre-line;
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .poem-box input:checked ~ .poem-content {
@@ -103,6 +109,7 @@ body {
     margin-bottom: 20px;
 }
 .sect{
+    padding: 30px;
    margin-bottom: 20px;
 }
 
