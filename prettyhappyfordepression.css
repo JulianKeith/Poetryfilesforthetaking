@@ -35,16 +35,7 @@ body {
     object-fit: cover;
 }
 
-.poem-box-1,
-.poem-box-2,
-.poem-box-3,
-.poem-box-4,
-.poem-box-5,
-.poem-box-6,
-.poem-box-7,
-.poem-box-8,
-.poem-box-9,
-.poem-box-10 {
+.poem-box {
     width: 80%;
     margin: 50px auto;
     padding: 20px;
@@ -101,19 +92,6 @@ body {
     );
 }
 
-.poem-box-1 input,
-.poem-box-2 input,
-.poem-box-3 input,
-.poem-box-4 input,
-.poem-box-5 input,
-.poem-box-6 input,
-.poem-box-7 input,
-.poem-box-8 input,
-.poem-box-9 input,
-.poem-box-10 input {
-    display: none;
-}
-
 .poem-box-1 label {
     font-family: 'Pacifico', cursive;
 }
@@ -153,16 +131,12 @@ body {
 .poem-box-10 label {
     font-family: 'UnifrakturCook', cursive;
 }
-.poem-box-1 label,
-.poem-box-2 label,
-.poem-box-3 label,
-.poem-box-4 label,
-.poem-box-5 label,
-.poem-box-6 label,
-.poem-box-7 label,
-.poem-box-8 label,
-.poem-box-9 label,
-.poem-box-10 label {
+
+.poem-box input {
+    display: none;
+}
+
+.poem-box label {
     display: block;
     padding: 20px;
     color: #fff5f7;
@@ -170,6 +144,7 @@ body {
     text-align: center;
     cursor: pointer;
 }
+
 
 .poem-content {
     font-family: 'Unkempt', serif;
@@ -186,16 +161,7 @@ body {
     white-space: pre-line;
     line-height: 1.2;
 }
-.poem-box-1 input:checked ~ .poem-content,
-.poem-box-2 input:checked ~ .poem-content,
-.poem-box-3 input:checked ~ .poem-content,
-.poem-box-4 input:checked ~ .poem-content,
-.poem-box-5 input:checked ~ .poem-content,
-.poem-box-6 input:checked ~ .poem-content,
-.poem-box-7 input:checked ~ .poem-content,
-.poem-box-8 input:checked ~ .poem-content,
-.poem-box-9 input:checked ~ .poem-content,
-.poem-box-10 input:checked ~ .poem-content {
+.poem-box input:checked ~ .poem-content {
     max-height: 5000px;
     opacity: 1;
 }
