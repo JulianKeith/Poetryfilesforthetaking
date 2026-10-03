@@ -156,8 +156,7 @@ body {
     transition:
         max-height 0.8s ease,
         opacity 0.5s ease;
-
-    color: #fff5f7;
+        color:antiquewhite;
     white-space: pre-line;
     line-height: 1.2;
 }
@@ -176,4 +175,10 @@ body {
     color: #2F2925;
     border-radius: 20px;
     margin-bottom: 20px;
+}
+
+#poem-box-1 .poem-content,
+#poem-box-2 .poem-content,
+#poem-box-3 .poem-content {
+    color: #eaf9fd;
 }
