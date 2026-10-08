@@ -139,3 +139,48 @@ body {
 .links-poems li {
     margin: 8px 0;
 }
+
+.poem-box.winter {
+    background-color: #B8CBD4;
+}
+
+.poem-box.spring {
+    background-color: #bacda2;
+}
+
+.poem-box.summer {
+    background-color: #E4C878;
+}
+
+.poem-box.autumn {
+    background-color: #C98F62;
+}
+
+.poem-box.winter,
+.poem-box.spring,
+.poem-box.summer,
+.poem-box.autumn {
+    color: #2F2925;
+}
+
+.nature-intro {
+    background: linear-gradient(
+        135deg,
+        #B8CBD4 0%,
+        #B8CBD4 20%,
+        #BACDA2 35%,
+        #BACDA2 45%,
+        #E4C878 60%,
+        #E4C878 70%,
+        #C98F62 85%,
+        #C98F62 100%
+    );
+}
+
+.nature-cover {
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
