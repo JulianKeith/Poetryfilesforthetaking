@@ -184,3 +184,25 @@ body {
     display: block;
     margin: 0 auto;
 }
+
+.dream-box {
+    background-color: rgba(37, 44, 90, 0.859);
+    color: #d6d6e2;
+    border-radius: 20px;
+}
+
+.dream-box label {
+    color: #e3e3ed;
+}
+
+.dream-box .poem-content {
+    color: #d6d6e2;
+}
+
+.dream-cover {
+    width: 80%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
