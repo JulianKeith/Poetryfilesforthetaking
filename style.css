@@ -121,7 +121,21 @@ body {
     margin-bottom: 20px;
 }
 
-.links-poems {
-    font-size: large;
-    line-height: 1;
+.links-poems a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #534f45;
+}
+
+.links-poems a:hover {
+    color: #1a1715;
+}
+
+.links-poems ul {
+    padding-left: 30px;
+    list-style: none;
+}
+
+.links-poems li {
+    margin: 8px 0;
 }
