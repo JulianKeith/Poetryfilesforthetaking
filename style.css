@@ -252,3 +252,20 @@ color: #292B46;
     display: block;
     margin: 0 auto;
 }
+
+.poem-box.mind-intro {
+    background: linear-gradient(
+        135deg,
+        #deccb5 0%,
+        #afa196 25%,
+        #79727e 50%,
+        #514b60 75%,
+        #252436 100%
+    );
+    color: #252436;
+}
+
+.poem-box.mind-intro label,
+.poem-box.mind-intro .poem-content {
+    color: #252436;
+}
