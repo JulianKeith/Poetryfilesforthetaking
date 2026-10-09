@@ -206,3 +206,49 @@ body {
     display: block;
     margin: 0 auto;
 }
+
+.poem-box.light {
+background-color: #F7E7A1;
+color: #65516F;
+}
+
+.poem-box.light label,
+.poem-box.light .poem-content {
+color: #65516F;
+}
+
+.poem-box.dark {
+background-color: #292B46;
+color: #D4C6F0;
+}
+
+.poem-box.dark label,
+.poem-box.dark .poem-content {
+color: #D4C6F0;
+}
+
+.poem-box.unearthly-intro {
+background: linear-gradient(
+135deg,
+#F7E7A1 0%,
+#E9AD69 25%,
+#C8A5C9 50%,
+#56517D 75%,
+#292B46 100%
+);
+color: #292B46;
+}
+
+.poem-box.unearthly-intro label,
+.poem-box.unearthly-intro .poem-content {
+color: #292B46;
+}
+
+.unearthly-cover {
+    width: 80%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+}
