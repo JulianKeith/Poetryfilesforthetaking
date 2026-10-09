@@ -206,3 +206,23 @@ body {
     display: block;
     margin: 0 auto;
 }
+
+.poem-box.light {
+background-color: #F7E7A1;
+color: #65516F;
+}
+
+.poem-box.light label,
+.poem-box.light .poem-content {
+color: #65516F;
+}
+
+.poem-box.dark {
+background-color: #292B46;
+color: #D4C6F0;
+}
+
+.poem-box.dark label,
+.poem-box.dark .poem-content {
+color: #D4C6F0;
+}
