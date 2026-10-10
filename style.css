@@ -358,3 +358,60 @@ color: #292B46;
     margin: 0 auto;
     transform: scaleX(-1);
 }
+
+.poem-box.dessert-intro {
+    background:
+        radial-gradient(
+            ellipse at top left,
+            #F4A6B8 0%,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at top right,
+            #FFF0D6 0%,
+            transparent 80%
+        ),
+        radial-gradient(
+            ellipse at bottom left,
+            #D9A066 0%,
+            transparent 75%
+        ),
+        radial-gradient(
+            ellipse at bottom right,
+            #744735 0%,
+            transparent 75%
+        ),
+        #EAB6B6;
+        color:#54322E;
+}
+
+.poem-box.cupcakes {
+    background-color: #EFA7B5;
+    color: #59333A;
+}
+
+.poem-box.ice-creams {
+    background-color: #83C9E8;
+    color: #173B52;
+}
+
+.poem-box.cakes {
+    background-color: #F5DDA0;
+    color: #64482A;
+}
+
+.poem-box.smoothies {
+    background-color: #B8D7A3;
+    color: #30472B;
+}
+
+.poem-box.cupcakes label,
+.poem-box.cupcakes .poem-content,
+.poem-box.ice-creams label,
+.poem-box.ice-creams .poem-content,
+.poem-box.cakes label,
+.poem-box.cakes .poem-content,
+.poem-box.smoothies label,
+.poem-box.smoothies .poem-content {
+    color: inherit;
+}
