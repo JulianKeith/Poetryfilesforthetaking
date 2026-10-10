@@ -415,3 +415,42 @@ color: #292B46;
 .poem-box.smoothies .poem-content {
     color: inherit;
 }
+
+
+
+
+.poem-box.dream-box {
+    background-color: #252B50;
+
+    background-image:
+        radial-gradient(circle, #FFF8D6 1px, transparent 1.5px),
+        radial-gradient(circle, #C9D7FF 1.2px, transparent 1.8px),
+        radial-gradient(circle, #FFFFFF 1.5px, transparent 2px),
+        radial-gradient(circle, #A9A0D0 1px, transparent 1.5px),
+        radial-gradient(circle, #FFF8D6 2px, transparent 2.5px),
+        radial-gradient(circle, #777EAF 1px, transparent 1.5px);
+
+    background-size:
+        83px 117px,
+        137px 91px,
+        191px 163px,
+        109px 173px,
+        223px 197px,
+        157px 131px;
+
+    background-position:
+        7px 29px,
+        43px 11px,
+        91px 67px,
+        17px 83px,
+        131px 23px,
+        61px 107px;
+
+    border: 1px solid #777EAF;
+    box-shadow: 0 0 15px #777EAF33;
+}
+
+.poem-box.dream-box label,
+.poem-box.dream-box .poem-content {
+    color: #F0EEFF;
+}
