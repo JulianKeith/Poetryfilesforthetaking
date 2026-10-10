@@ -269,3 +269,81 @@ color: #292B46;
 .poem-box.mind-intro .poem-content {
     color: #252436;
 }
+
+.poem-box.dream-intro {
+    background: linear-gradient(
+        135deg,
+        #D8CDEB 0%,
+        #A9A0D0 25%,
+        #777EAF 50%,
+        #424D7C 75%,
+        #191D3B 100%
+    );
+    color: #191D3B;
+}
+
+.poem-box.dream-intro label,
+.poem-box.dream-intro .poem-content {
+    color: #191D3B;
+}
+
+.poem-box.people-intro {
+
+  background:
+    radial-gradient(
+      ellipse at top left,
+      #F7F4BF 0%,
+      transparent 32%
+    ),
+    radial-gradient(
+      ellipse at top right,
+      #0482E6 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse at bottom left,
+      #E58D55 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse at bottom right,
+      #071A40 0%,
+      transparent 58%
+    ),
+    #817674;
+}
+
+.poem-box.people-intro label,
+.poem-box.people-intro .poem-content {
+    color: #343449;
+}
+
+.poem-box.orange {
+    background-color: #E58D55;
+    color: #382820;
+}
+
+.poem-box.orange label,
+.poem-box.orange .poem-content {
+    color: #382820;
+}
+
+.poem-box.blue {
+    background-color: #354C78;
+    color: #FFFFFF;
+}
+
+.poem-box.blue label,
+.poem-box.blue .poem-content {
+    color: #FFFFFF;
+}
+
+.people-cover {
+    width: 80%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+    transform: scaleX(-1);
+}
