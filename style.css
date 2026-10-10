@@ -164,17 +164,28 @@ body {
 }
 
 .nature-intro {
-    background: linear-gradient(
-        135deg,
-        #B8CBD4 0%,
-        #B8CBD4 15%,
-        #BACDA2 30%,
-        #BACDA2 45%,
-        #E4C878 60%,
-        #E4C878 70%,
-        #C98F62 85%,
-        #C98F62 100%
-    );
+    background:
+        radial-gradient(
+            ellipse at top left,
+            #B8CBD4 20%,
+            transparent 67%
+        ),
+        radial-gradient(
+            ellipse at top right,
+            #BACDA2 0%,
+            transparent 74%
+        ),
+        radial-gradient(
+            ellipse at bottom left,
+            #E4C878 0%,
+            transparent 80%
+        ),
+        radial-gradient(
+            ellipse at bottom right,
+            #C98F62 0%,
+            transparent 71%
+        ),
+        #D4BDA0;
 }
 
 .nature-cover {
