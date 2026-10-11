@@ -454,3 +454,40 @@ color: #292B46;
 .poem-box.dream-box .poem-content {
     color: #F0EEFF;
 }
+
+
+/* Star canvas behind the poem content */
+.poem-box.dream-box {
+    position: relative;
+    isolation: isolate;
+}
+
+.poem-box.dream-box .dream-stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.poem-box.dream-box label,
+.poem-box.dream-box .poem-content {
+    position: relative;
+    color: #F0EEFF;
+}
+
+
+#treeCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > :not(#treeCanvas) {
+    position: relative;
+    z-index: 1;
+}
