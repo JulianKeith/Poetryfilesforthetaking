@@ -478,7 +478,9 @@ color: #292B46;
 }
 
 
-#treeCanvas {
+
+#treeCanvas,
+#leafTrailCanvas {
     position: fixed;
     inset: 0;
     width: 100%;
@@ -487,7 +489,119 @@ color: #292B46;
     z-index: 0;
 }
 
-body > :not(#treeCanvas) {
+body > :not(#treeCanvas):not(#leafTrailCanvas) {
     position: relative;
     z-index: 1;
 }
+
+nav.first {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+
+body {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+
+/* ===== CELESTIAL WATERMARK ===== */
+
+#celestial-bg {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+#celestial-wheel {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 500px !important;
+    height: 500px !important;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) rotate(0deg);
+    border-radius: 50%;
+    overflow: hidden;
+    clip-path: circle(50%);
+}
+
+.sun-half,
+.moon-half {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sun-half {
+    background: repeating-conic-gradient(
+        from 0deg,
+        #f6c76d 0deg 10deg,
+        #ffe7a8 10deg 20deg
+    );
+}
+
+.sun-half::after {
+    content: "";
+    position: absolute;
+    width: 78%;
+    aspect-ratio: 1;
+    left: 61%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        #fff0bd,
+        #f5c46b 72%,
+        #e9a35c
+    );
+}
+
+.moon-half {
+    background: #292943;
+    color: #f8e5a8;
+}
+
+.moon-half span {
+    font-size: clamp(100px, 18vw, 220px);
+    line-height: 1;
+}
+
+.star {
+    position: absolute;
+    font-style: normal;
+    font-size: 28px;
+}
+
+.star-one {
+    top: 22%;
+    right: 24%;
+}
+
+.star-two {
+    top: 65%;
+    right: 18%;
+}
+
+.star-three {
+    top: 38%;
+    right: 12%;
+    font-size: 42px;
+}
+

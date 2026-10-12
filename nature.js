@@ -3,7 +3,6 @@
     const treeCanvas = document.getElementById("treeCanvas");
     const trailCanvas = document.getElementById("leafTrailCanvas");
 
-    // Only run on pages containing both canvases
     if (!treeCanvas || !trailCanvas) return;
 
     const ctx = treeCanvas.getContext("2d");
@@ -11,7 +10,7 @@
 
     const STEP_SIZE = 5;
     const MAX_TREE_HEIGHT = 700;
-    const SEASON_DURATION = 12000;
+    const SEASON_DURATION = 10000;
     const SEASONS = ["spring", "summer", "autumn", "winter"];
 
     let branches = [];
@@ -87,7 +86,7 @@
             thickness: b.thickness
         });
 
-        if (!b.trunk && Math.random() < 0.1) {
+        if (!b.trunk && Math.random() < 0.13) {
             addLeaf(b.x, b.y);
         }
 
@@ -114,7 +113,7 @@
     function addLeaf(x, y) {
         const palettes = {
             spring: ["#8BCF83", "#66BB6A", "#A5D98B"],
-            summer: ["#2E7D32", "#388E3C", "#43A047"],
+            summer: ["#296c2c", "#337e37", "#317926"],
             autumn: ["#FFB74D", "#FB8C00", "#C62828"]
         };
 
@@ -123,7 +122,7 @@
         leaves.push({
             x,
             y,
-            size: Math.random() * 3 + 2,
+            size: Math.random() * 4 + 3,
             color: palette[Math.floor(Math.random() * palette.length)],
             angle: Math.random() * Math.PI
         });
@@ -137,7 +136,7 @@
         context.fillStyle = leaf.color;
         context.beginPath();
         context.ellipse(
-            0, 0, leaf.size, leaf.size * 1.3,
+            0, 0, leaf.size, leaf.size * 1.4,
             0, 0, Math.PI * 2
         );
         context.fill();
@@ -238,7 +237,7 @@
             const existing = leaves.slice();
 
             for (const leaf of existing) {
-                if (Math.random() < 0.55) {
+                if (Math.random() < 0.67) {
                     addLeaf(
                         leaf.x + (Math.random() - 0.5) * 18,
                         leaf.y + (Math.random() - 0.5) * 18

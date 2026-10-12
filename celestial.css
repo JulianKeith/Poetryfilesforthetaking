@@ -1,0 +1,457 @@
+
+/* ===== GLOBAL ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+    background: transparent;
+}
+
+body {
+    font-family: 'Unkempt', cursive;
+    overflow-x: hidden;
+}
+
+/* ===== NAVIGATION ===== */
+
+nav.first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    min-height: 60px;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.first ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.first a {
+    color: #6D685E;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.first a:hover {
+    color: #1A1715;
+}
+
+/* ===== HERO / BANNER ===== */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+}
+
+.cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(90%, 800px);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.banner-text h1 {
+    font-size: clamp(30px, 5vw, 50px);
+}
+
+/* ===== MAIN CONTENT ===== */
+
+.main-content {
+    width: min(1000px, 90%);
+    margin: 0 auto;
+}
+
+.sect {
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+#whatpoems,
+#introduction {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #CEBFA3;
+    color: #2F2925;
+    text-align: center;
+}
+
+/* ===== POEM ACCORDIONS ===== */
+
+.poem-box {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #CEBFA3;
+}
+
+.poem-box input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.poem-box label {
+    display: block;
+    padding: 20px;
+    color: #2F2925;
+    font-size: clamp(22px, 4vw, 30px);
+    text-align: center;
+    cursor: pointer;
+}
+
+.poem-box input:focus-visible + label {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+.poem-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    color: #2F2925;
+    line-height: 1.5;
+    white-space: pre-line;
+    transition:
+        max-height 0.8s ease,
+        opacity 0.5s ease;
+}
+
+.poem-box input:checked ~ .poem-content {
+    max-height: 10000px;
+    opacity: 1;
+}
+
+/* ===== POEM LINKS ===== */
+
+.links-poems ul {
+    padding-left: 30px;
+    list-style: none;
+}
+
+.links-poems li {
+    margin: 8px 0;
+}
+
+.links-poems a {
+    color: #534F45;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.links-poems a:hover {
+    color: #1A1715;
+}
+
+/* ===== POEM THEMES ===== */
+
+.poem-box.light {
+    background-color: #F7E7A1;
+    color: #65516F;
+}
+
+.poem-box.light label,
+.poem-box.light .poem-content {
+    color: #65516F;
+}
+
+.poem-box.dark {
+    background-color: #292B46;
+    color: #D4C6F0;
+}
+
+.poem-box.dark label,
+.poem-box.dark .poem-content {
+    color: #D4C6F0;
+}
+
+.poem-box.unearthly-intro {
+    background: linear-gradient(
+        135deg,
+        #F7E7A1 0%,
+        #E9AD69 25%,
+        #C8A5C9 50%,
+        #56517D 75%,
+        #292B46 100%
+    );
+    color: #292B46;
+}
+
+.poem-box.unearthly-intro label,
+.poem-box.unearthly-intro .poem-content {
+    color: #292B46;
+}
+
+/* ===== ALBUM COVERS ===== */
+
+.nature-cover,
+.unearthly-cover,
+.people-cover,
+.dream-cover {
+    display: block;
+    width: 80%;
+    max-width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dream-cover {
+    height: 400px;
+}
+
+/* ===== BACKGROUND CANVASES ===== */
+
+#dayNightCanvas,
+#treeCanvas,
+#leafTrailCanvas,
+#starCanvas,
+#starTimeCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+#dayNightCanvas {
+    z-index: 0;
+}
+
+#treeCanvas,
+#leafTrailCanvas,
+#starCanvas,
+#starTimeCanvas {
+    z-index: 1;
+}
+
+/* Keep page content above background effects. */
+body > :not(canvas):not(#celestial-bg):not(#dayNightBackground) {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== DAY / NIGHT BACKGROUND ===== */
+
+#dayNightBackground {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+
+    background: linear-gradient(
+        to bottom,
+        #F8E5AD 0%,
+        #E8C77B 49%,
+        #D9D4C3 50%,
+        #343B69 51%,
+        #202747 100%
+    );
+
+    background-size: 100% 200%;
+    background-position: center 0%;
+    will-change: background-position;
+}
+
+/* ===== CELESTIAL WATERMARK ===== */
+
+#celestial-bg {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#celestial-wheel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: min(500px, 85vw);
+    aspect-ratio: 1;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    clip-path: circle(50%);
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+}
+
+#celestial-wheel .sun-half,
+#celestial-wheel .moon-half {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#celestial-wheel .sun-half {
+    background: repeating-conic-gradient(
+        from 0deg,
+        #F6C76D 0deg 10deg,
+        #FFE7A8 10deg 20deg
+    );
+}
+
+#celestial-wheel .sun-half::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 61%;
+    width: 78%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle,
+        #FFF0BD,
+        #F5C46B 72%,
+        #E9A35C
+    );
+}
+
+#celestial-wheel .moon-half {
+    background: #292943;
+    color: #F8E5A8;
+}
+
+#celestial-wheel .moon-half span {
+    display: block;
+    color: #F8E5A8;
+    font-size: clamp(90px, 18vw, 150px);
+    line-height: 1;
+}
+
+#celestial-wheel .star {
+    position: absolute;
+    font-size: 28px;
+    font-style: normal;
+}
+
+#celestial-wheel .star-one {
+    top: 22%;
+    right: 24%;
+}
+
+#celestial-wheel .star-two {
+    top: 65%;
+    right: 18%;
+}
+
+#celestial-wheel .star-three {
+    top: 38%;
+    right: 12%;
+    font-size: 42px;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 600px) {
+    nav.first {
+        justify-content: center;
+        padding: 12px;
+    }
+
+    .first ul {
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .first a,
+    .links-poems a {
+        font-size: 17px;
+    }
+
+    .main-content {
+        width: 94%;
+    }
+
+    .poem-box {
+        margin: 25px auto;
+        padding: 12px;
+    }
+
+    .poem-box label {
+        padding: 14px 8px;
+    }
+
+    .cover,
+    .banner {
+        height: 320px;
+    }
+
+    .nature-cover,
+    .unearthly-cover,
+    .people-cover,
+    .dream-cover {
+        width: 100%;
+        height: 250px;
+    }
+
+    .sect {
+        padding: 18px;
+    }
+
+    #celestial-wheel {
+        width: 75vw;
+    }
+}
+
+/* Respect reduced-motion preferences. */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
