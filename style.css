@@ -415,3 +415,193 @@ color: #292B46;
 .poem-box.smoothies .poem-content {
     color: inherit;
 }
+
+
+
+
+.poem-box.dream-box {
+    background-color: #252B50;
+
+    background-image:
+        radial-gradient(circle, #FFF8D6 1px, transparent 1.5px),
+        radial-gradient(circle, #C9D7FF 1.2px, transparent 1.8px),
+        radial-gradient(circle, #FFFFFF 1.5px, transparent 2px),
+        radial-gradient(circle, #A9A0D0 1px, transparent 1.5px),
+        radial-gradient(circle, #FFF8D6 2px, transparent 2.5px),
+        radial-gradient(circle, #777EAF 1px, transparent 1.5px);
+
+    background-size:
+        83px 117px,
+        137px 91px,
+        191px 163px,
+        109px 173px,
+        223px 197px,
+        157px 131px;
+
+    background-position:
+        7px 29px,
+        43px 11px,
+        91px 67px,
+        17px 83px,
+        131px 23px,
+        61px 107px;
+
+    border: 1px solid #777EAF;
+    box-shadow: 0 0 15px #777EAF33;
+}
+
+.poem-box.dream-box label,
+.poem-box.dream-box .poem-content {
+    color: #F0EEFF;
+}
+
+
+/* Star canvas behind the poem content */
+.poem-box.dream-box {
+    position: relative;
+    isolation: isolate;
+}
+
+.poem-box.dream-box .dream-stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.poem-box.dream-box label,
+.poem-box.dream-box .poem-content {
+    position: relative;
+    color: #F0EEFF;
+}
+
+
+
+#treeCanvas,
+#leafTrailCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > :not(#treeCanvas):not(#leafTrailCanvas) {
+    position: relative;
+    z-index: 1;
+}
+
+nav.first {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+
+body {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+
+/* ===== CELESTIAL WATERMARK ===== */
+
+#celestial-bg {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+#celestial-wheel {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 500px !important;
+    height: 500px !important;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) rotate(0deg);
+    border-radius: 50%;
+    overflow: hidden;
+    clip-path: circle(50%);
+}
+
+.sun-half,
+.moon-half {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sun-half {
+    background: repeating-conic-gradient(
+        from 0deg,
+        #f6c76d 0deg 10deg,
+        #ffe7a8 10deg 20deg
+    );
+}
+
+.sun-half::after {
+    content: "";
+    position: absolute;
+    width: 78%;
+    aspect-ratio: 1;
+    left: 61%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        #fff0bd,
+        #f5c46b 72%,
+        #e9a35c
+    );
+}
+
+.moon-half {
+    background: #292943;
+    color: #f8e5a8;
+}
+
+.moon-half span {
+    font-size: clamp(100px, 18vw, 220px);
+    line-height: 1;
+}
+
+.star {
+    position: absolute;
+    font-style: normal;
+    font-size: 28px;
+}
+
+.star-one {
+    top: 22%;
+    right: 24%;
+}
+
+.star-two {
+    top: 65%;
+    right: 18%;
+}
+
+.star-three {
+    top: 38%;
+    right: 12%;
+    font-size: 42px;
+}
+

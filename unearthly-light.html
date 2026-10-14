@@ -2,10 +2,31 @@
   <html>
     <head>
         <title>Poetry Collection</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="celestial.css">
+        <script src="celestial.js" defer></script>
         <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
+<div id="dayNightBackground"></div>
+<canvas id="starCanvas"></canvas>
+<canvas id="starTimeCanvas" aria-hidden="true"></canvas>
+<canvas id="dayNightCanvas" aria-hidden="true"></canvas>
+<div id="celestial-bg" aria-hidden="true">
+    <div id="celestial-wheel">
+        <div class="sun-half">
+            <span>☀</span>
+        </div>
+        <div class="moon-half">
+    <span>☾</span>
+    <i class="star star-one">✦</i>
+    <i class="star star-two">✧</i>
+    <i class="star star-three">·</i>
+</div>
+</div>
+</div>
+
+<div id="day-night-overlay" aria-hidden="true"></div>
+
         <nav class="first">
         <img src="logo.png" alt="Logo" class="logo">
           <ul>
