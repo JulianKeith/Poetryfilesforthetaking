@@ -808,3 +808,10 @@ background: #0507147a;
         transform: translateX(-50vw) scale(0.8);
     }
 }
+
+body {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1px 0 30px;
+}

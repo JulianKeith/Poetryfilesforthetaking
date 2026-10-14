@@ -455,3 +455,10 @@ body > :not(canvas):not(#celestial-bg):not(#dayNightBackground) {
         transition-duration: 0.01ms !important;
     }
 }
+
+body {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1px 0 30px;
+}
