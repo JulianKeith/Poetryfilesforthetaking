@@ -182,3 +182,10 @@ body {
 #poem-box-3 .poem-content {
     color: #eaf9fd;
 }
+
+body {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1px 0 30px;
+}

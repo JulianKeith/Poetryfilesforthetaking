@@ -605,3 +605,9 @@ body {
     font-size: 42px;
 }
 
+body {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1px 0 30px;
+}

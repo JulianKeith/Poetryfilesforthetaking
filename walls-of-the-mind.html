@@ -1,18 +1,647 @@
+
 <!DOCTYPE html>
-  <html>
-    <head>
-        <title>Poetry Collection</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <nav class="first">
-        <img src="logo.png" alt="Logo" class="logo">
-          <ul>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="walls-of-the-mind.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body class="walls-of-the-mind-page">
+
+    <!-- Animated maze background -->
+    <canvas id="mind-maze" aria-hidden="true"></canvas>
+
+    <!-- Navigation -->
+    <nav class="first">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="Logo" class="logo">
+        </a>
+
+        <ul>
             <li><a href="index.html">Introduction</a></li>
             <li><a href="albums.html">Chapbooks</a></li>
             <li><a href="poems.html">Poems</a></li>
             <li><a href="inspirations.html">Inspirations</a></li>
-            <li><a href="prettyhappyfordepression.html">Pretty Happy for Depression</a></li>
-          </ul>
-        </nav>
+            <li>
+                <a href="prettyhappyfordepression.html">
+                    Pretty Happy for Depression
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page content -->
+    <main class="mind-content">
+
+        <section class="poem-list" aria-label="Poems">
+
+            <div class="poem-box mind-intro">
+                <input type="checkbox" id="poem-1">
+                <label for="poem-1">Walls Of The Mind Introduction</label>
+                <div class="poem-content">
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <input type="checkbox" id="poem-2">
+                <label for="poem-2">Haunting Spectre</label>
+                <div class="poem-content">
+                    
+
+Click, Ka-Chunk!
+The sound of the door.
+I jumped, startled.
+Then swiftly tense.
+An unsettling presence
+Makes me shudder all over.
+
+Laboured breathing, in, out.
+Lonely Introvert.
+Tense. Abnormal.
+The walls seem to speak.
+Heavy Thudding.
+Flight or Fight? 
+I choose flight.
+
+Standing still.
+Nothing moves.
+Or so it seems.
+Terrified.
+Fear washing over my body.
+But why?
+
+Click, Ka-Chunk!
+The sound of the -
+… 
+Thud. Thud. Thud,
+I’m in free-fall
+Splotches of red
+Alongside me.
+Now,
+Nothing moves.
+
+
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <input type="checkbox" id="poem-3">
+                <label for="poem-3">Locked Door</label>
+                <div class="poem-content">
+                    
+Pushed.
+Into a room we called home.
+Trapped
+In a home that is just a house.
+You
+Who pushed me in there
+Smiling in my pain
+And dancing on my grave.
+
+Clink.
+Sound of the lock.
+Wails.
+Sound of my voice.
+Walls.
+Speaking to me.
+Ba-bump.
+Sound of my heart.
+Wiped away
+Like a smear on your clothing.
+
+No windows.
+You won’t let me see daylight.
+No air
+You won’t let me breathe.
+No people
+Letting me rot here.
+Locked door.
+As if I wasn’t separate enough.
+
+Eyes heavy.
+Watching my life scurry away.
+Long lost hope.
+Like the ray of sunlight
+That doesn’t hit me.
+Love
+Like the way you THREW me
+Into this prison.
+Key.
+Like how you burned it
+And will burn me
+Into a living hell.
+
+
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <input type="checkbox" id="poem-4">
+                <label for="poem-4">Obsessive Insanity</label>
+                <div class="poem-content">
+                    
+Hyperfixation.
+Rewind.
+Again in my head, again.
+Memories, flashbacks.
+Flowing, never stopping.
+Ideas roll.
+More and More.
+
+
+Failing,
+Questions. Answers.
+Formal. Casual.
+Brake pedal. Gas pedal.
+Pressed at the same time.
+Stop. Go. Breathe. Choke.
+Night Owl. Morning Lark.
+Eyes forgetting what sleep once was.
+
+No-one beside me.
+Except the
+Walls that speak
+With no-one to listen.
+Breathe. Hold.
+Try not to choke.
+(Un)happy cry.
+That no-one hears.
+
+You’re BACK?
+Trapped. Screaming silence.
+Scream. Pound.
+Escape reality.
+Ba-bump.
+Pounding again
+On the walls that chain me
+And you who love
+Every moment of it.
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <input type="checkbox" id="poem-5">
+                <label for="poem-5">Stalking My Chainers</label>
+                <div class="poem-content">
+                   
+
+Icy COLD metal bites my hands.
+Not cold-
+Too cold it feels WARM.
+One drop of water falls at a time.
+Not from the sky
+But from my EYES.
+Warming the chains significantly.
+
+Pound. 
+On thick grey walls 
+That envelop my conscience,
+An injured conscience,
+But still a conscience. 
+At least I have one
+Compared to those
+Who chain me.
+
+Escape?
+A window, with no bars.
+Glass that can be broken.
+1…  2… 3…!
+I smash into it.
+Cuffs gone, hands bloodied and bruised.
+The glass shattered, shards spilling everywhere
+And I’m free.
+
+Run.
+Into a grey forgotten maze.
+Hope they chase me.
+And turn into something
+Only the maze can remember.
+Because they deserve it-
+I hear screaming from the other side.
+And a growing sensation wells up inside of me
+That only one person
+Is leaving alive.
+
+
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <input type="checkbox" id="poem-6">
+                <label for="poem-6">The Scent of Ashes</label>
+                <div class="poem-content">
+                 
+Burning.
+Through a home I once knew.
+Ashes and ashes piling to the stars.
+Orange flames flickering,
+Their glow illuminating the layers of darkness.
+And me?
+Stuck inside of a room
+I once called my own. 
+
+I wake.
+Hands cuffed
+But the flames eat through the metal.
+Yank. Scream. Pull.
+My hands burn off.
+With the cuffs that chained me.
+Agony. Seething hatred.
+But for now, I have to wait.
+
+I kick the door open.
+Unable to open my eyes.
+But in the smoke?
+I would go blind.
+I blindly stumble forward. 
+Wherever coldest.
+Woah!
+I hit the ground
+And calm down.
+As I inhale the scent of flower.
+
+I watch.
+As my home
+Burns down
+And a part of me 
+Burns down as well.
+The empty space within me
+Will hate whoever did this
+Forevermore.
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <input type="checkbox" id="poem-7">
+                <label for="poem-7">Looking Down and Up</label>
+                <div class="poem-content">
+                    
+Get a grip.
+I reach for the next handhold.
+Arms heavy, legs like jelly.
+Stretch. 
+Body limp as a noodle.
+Keep pushing, keep pushing.
+Keep going.
+
+I look up.
+Sky blue sky
+Grey inky clouds.
+So far to go!
+I need motivation.
+Something that can keep me going.
+So
+I 
+Look down.
+
+But…
+I see everything.
+Too far down.
+Feeling heavy.
+Stomach churning
+Head lolling.
+Breathe, gasping for air.
+Dizziness takes over
+My floating body.
+
+Get a grip!
+I float
+Falling
+Seemingly in slow motion.
+Watching everything
+Rise above me.
+The ground comes up to meet me
+But when I expect pain
+It's painless…
+Or too much for me
+To handle.
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <input type="checkbox" id="poem-8">
+                <label for="poem-8">My Last Breath</label>
+                <div class="poem-content">
+                    
+Crystal clear water. 
+Arms swinging. Legs tensing.
+Ready to jump.
+Laboured breathing.
+Just a dive. 
+Just a dive.
+To touch the bottom of the deep pool.
+
+Jump.
+I’m in freefall.
+Legs tight
+Arms launching.
+THUD.
+I slam into the water.
+My momentum carried me to the bottom.
+Now I have to make it back… 
+
+Chest heaving.
+Lungs burning.
+Kick. Glide. Kick.
+I look up.
+So far away.
+I take a breath…
+And all I inhale is water.
+
+I slow down.
+As if going through mud.
+Heavy under the weight of the water. 
+Arms dead.
+Eyes blurry. 
+I kick upward with the last of my air
+Praying that it isn’t 
+My Last Breath.
+
+Gasp.
+                </div>
+            </div>
+            <div class="poem-box">
+                <input type="checkbox" id="poem-9">
+                <label for="poem-9">Doors of My Mind</label>
+                <div class="poem-content">
+                    
+Walls envelop my home
+Walls envelop my house.
+Grey tall walls
+That reach to the sky.
+Trapping. Closing.
+I try to scream
+But they block my sound.
+
+Walls fall down
+Burning in flame.
+The floor opens up
+And turns to water.
+I sink down
+Slowly. Slowly.
+Like sinking in mud.
+
+The water disappears
+But the blue stays.
+Skies of blue-
+My mind clouds over
+And I focus inward.
+Go. Stop. Go. Stop.
+Breathe. Chok-
+
+Breathe.
+I fall
+Down
+And Down.
+But
+I. 
+Can 
+Control 
+My mind.
+No walls.
+No falling.
+I choose
+Doors that I can open.
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+<script>
+(() => {
+    const canvas = document.getElementById("mind-maze");
+    const ctx = canvas?.getContext("2d");
+
+    if (!canvas || !ctx) return;
+
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+    const cell = 22;
+    const directions = [
+        [-1, 0, 0, 2], // Top
+        [0, 1, 1, 3],  // Right
+        [1, 0, 2, 0],  // Bottom
+        [0, -1, 3, 1]  // Left
+    ];
+
+    let width = 0;
+    let height = 0;
+    let cols = 0;
+    let rows = 0;
+    let maze = [];
+    let zoom = 1;
+    let lastFrame = 0;
+    let lastTime = 0;
+    let animationFrame = null;
+
+    function generateMaze() {
+        cols = Math.ceil(width / cell) + 2;
+        rows = Math.ceil(height / cell) + 2;
+
+        maze = Array.from({ length: rows }, () =>
+            Array.from({ length: cols }, () => ({
+                walls: [true, true, true, true],
+                visited: false
+            }))
+        );
+
+        const stack = [{ r: 1, c: 1 }];
+        maze[1][1].visited = true;
+
+        // Randomized depth-first maze generation
+        while (stack.length > 0) {
+            const current = stack[stack.length - 1];
+            const choices = [];
+
+            for (const [dr, dc, wall, opposite] of directions) {
+                const r = current.r + dr;
+                const c = current.c + dc;
+
+                if (
+                    r > 0 && r < rows - 1 &&
+                    c > 0 && c < cols - 1 &&
+                    !maze[r][c].visited
+                ) {
+                    choices.push({ r, c, wall, opposite });
+                }
+            }
+
+            if (choices.length === 0) {
+                stack.pop();
+                continue;
+            }
+
+            const next =
+                choices[Math.floor(Math.random() * choices.length)];
+
+            maze[current.r][current.c].walls[next.wall] = false;
+            maze[next.r][next.c].walls[next.opposite] = false;
+            maze[next.r][next.c].visited = true;
+
+            stack.push({ r: next.r, c: next.c });
+        }
+
+        // Open a few walls to add occasional loops
+        for (let r = 1; r < rows - 1; r++) {
+            for (let c = 1; c < cols - 1; c++) {
+                if (Math.random() >= 0.08) continue;
+
+                const [dr, dc, wall, opposite] =
+                    directions[Math.floor(Math.random() * 4)];
+
+                const nr = r + dr;
+                const nc = c + dc;
+
+                if (
+                    nr > 0 && nr < rows - 1 &&
+                    nc > 0 && nc < cols - 1
+                ) {
+                    maze[r][c].walls[wall] = false;
+                    maze[nr][nc].walls[opposite] = false;
+                }
+            }
+        }
+    }
+
+    function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        width = window.innerWidth;
+        height = window.innerHeight;
+
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        generateMaze();
+        draw();
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        ctx.save();
+
+        // Zoom toward the centre
+        ctx.translate(centerX, centerY);
+        ctx.scale(zoom, zoom);
+        ctx.translate(-centerX, -centerY);
+
+        const offsetX = (width - (cols - 2) * cell) / 2;
+        const offsetY = (height - (rows - 2) * cell) / 2;
+
+        ctx.beginPath();
+        ctx.lineWidth = 1.2;
+        ctx.strokeStyle = "rgba(175, 161, 150, 0.30)";
+        ctx.lineJoin = "round";
+
+        for (let r = 1; r < rows - 1; r++) {
+            for (let c = 1; c < cols - 1; c++) {
+                const x = offsetX + (c - 1) * cell;
+                const y = offsetY + (r - 1) * cell;
+                const walls = maze[r][c].walls;
+
+                // Draw each wall once
+                if (walls[0]) {
+                    ctx.moveTo(x, y);
+                    ctx.lineTo(x + cell, y);
+                }
+
+                if (walls[3]) {
+                    ctx.moveTo(x, y);
+                    ctx.lineTo(x, y + cell);
+                }
+
+                if (r === rows - 2 && walls[2]) {
+                    ctx.moveTo(x, y + cell);
+                    ctx.lineTo(x + cell, y + cell);
+                }
+
+                if (c === cols - 2 && walls[1]) {
+                    ctx.moveTo(x + cell, y);
+                    ctx.lineTo(x + cell, y + cell);
+                }
+            }
+        }
+
+        ctx.stroke();
+        ctx.restore();
+
+        // Dark vignette draws attention inward
+        const gradient = ctx.createRadialGradient(
+            centerX, centerY, Math.min(width, height) * 0.10,
+            centerX, centerY, Math.max(width, height) * 0.72
+        );
+
+        gradient.addColorStop(0, "rgba(37, 36, 54, 0.02)");
+        gradient.addColorStop(0.55, "rgba(15, 14, 25, 0.16)");
+        gradient.addColorStop(1, "rgba(10, 9, 20, 0.76)");
+
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+    }
+
+    function animate(time) {
+        animationFrame = requestAnimationFrame(animate);
+
+        // Limit redraws to around 30 frames per second
+        if (time - lastFrame < 33) return;
+
+        lastFrame = time;
+
+        if (!lastTime) lastTime = time;
+
+        const elapsed = Math.min(time - lastTime, 100);
+        lastTime = time;
+
+        if (!reduceMotion.matches) {
+            zoom += elapsed * 0.000012;
+
+            // Reset the zoom for a subtle repeating inward pull
+            if (zoom >= 1.12) {
+                zoom = 1;
+            }
+        }
+
+        draw();
+    }
+
+    function startAnimation() {
+        if (animationFrame !== null) {
+            cancelAnimationFrame(animationFrame);
+            animationFrame = null;
+        }
+
+        lastTime = 0;
+
+        if (reduceMotion.matches) {
+            zoom = 1;
+            draw();
+        } else {
+            animationFrame = requestAnimationFrame(animate);
+        }
+    }
+
+    window.addEventListener("resize", resize);
+
+    reduceMotion.addEventListener?.("change", startAnimation);
+
+    resize();
+    startAnimation();
+})();
+</script>
+
+</body>
+</html>
