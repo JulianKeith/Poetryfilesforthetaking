@@ -183,9 +183,23 @@ body {
     color: #eaf9fd;
 }
 
-body {
+.first {
     width: 100%;
+    box-sizing: border-box;
+}
+
+.content {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 1px 0 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+    border-radius: 50%;
 }

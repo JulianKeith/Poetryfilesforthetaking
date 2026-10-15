@@ -641,11 +641,16 @@ body.walls-of-the-mind-page > main {
     z-index: 1;
 }
 
-body.walls-of-the-mind-page .mind-content {
+.first {
     width: 100%;
+    box-sizing: border-box;
+}
+
+.content {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 1px 0 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* FIX: MAZE MUST BE A BACKGROUND */
@@ -755,4 +760,13 @@ body.walls-of-the-mind-page .poem-box.mind-intro {
         #79727E 75%,
         #514B60 100%
     );
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+    border-radius: 50%;
 }
