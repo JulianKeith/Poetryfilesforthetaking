@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Unkempt', cursive;
+    background-color: #080b12;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(65, 145, 255, 0.035) 4px
+        ),
+        radial-gradient(
+            ellipse at top,
+            rgba(15, 65, 120, 0.25),
+            transparent 65%
+        );
+    background-attachment: fixed;
+    color: #e5edff;
+}
+
+/* Navigation */
+
+nav.first,
+.first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    min-height: 70px;
+    padding: 12px 5%;
+    box-sizing: border-box;
+    background: rgba(5, 8, 15, 0.92);
+    border: none;
+    border-bottom: 1px solid rgba(65, 145, 255, 0.3);
+    border-radius: 0;
+    box-shadow: 0 4px 24px rgba(0, 100, 255, 0.08);
+    margin-bottom: 25px;
+}
+
+.first ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.first a {
+    color: #b9cfff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.first a:hover {
+    color: #55cfff;
+    text-shadow: 0 0 10px rgba(55, 180, 255, 0.65);
+}
+
+/* Logo */
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+/* Main content */
+
+.main-content,
+.content {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Poem cards */
+
+.poem-box {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(
+        145deg,
+        rgba(15, 24, 42, 0.96),
+        rgba(9, 13, 24, 0.98)
+    );
+    border: 1px solid rgba(65, 145, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 0 22px rgba(0, 100, 255, 0.06);
+}
+
+.poem-box input {
+    display: none;
+}
+
+.poem-box label {
+    display: block;
+    padding: 20px;
+    color: #8bdcff;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.poem-box label:hover {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(85, 207, 255, 0.5);
+}
+
+.poem-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.8s ease, opacity 0.5s ease;
+    color: #e5edff;
+    white-space: pre-line;
+    line-height: 1.5;
+}
+
+.poem-box input:checked ~ .poem-content {
+    max-height: 5000px;
+    opacity: 1;
+}
+
+/* Poem links */
+
+.links-poems a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #9ac9ff;
+}
+
+.links-poems a:hover {
+    color: #55cfff;
+}
+
+.links-poems ul {
+    padding-left: 30px;
+    list-style: none;
+}
+
+.links-poems li {
+    margin: 8px 0;
+}
+
+/* Banner */
+
+.cover {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.banner {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px #000000;
+}
+
+.banner-text h1 {
+    font-size: 50px;
+}
+
+/* Mobile */
+    .first ul {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .first a {
+        font-size: 16px;
+    }
+
+    .poem-box {
+        width: 95%;
+        padding: 12px;
+    }
+
+    .poem-box label {
+        font-size: 24px;
+    }
+
+    .banner-text h1 {
+        font-size: 36px;
+    }
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}

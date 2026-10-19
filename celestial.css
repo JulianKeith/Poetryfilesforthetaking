@@ -21,33 +21,44 @@ body {
 
 /* ===== NAVIGATION ===== */
 
-nav.first {
+.first {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    min-height: 60px;
+    gap: 20px;
+    min-height: 70px;
     padding: 10px 20px;
-    position: relative;
-    z-index: 2;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        110deg,
+        #252436 0%,
+        #292B46 55%,
+        #354C78 100%
+    );
+
+    border-radius: 16px;
+    margin-bottom: 25px;
 }
 
 .first ul {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 12px 30px;
+    list-style: none;
+    gap: 20px;
     margin: 0;
     padding: 0;
-    list-style: none;
 }
 
 .first a {
-    color: #6D685E;
-    font-size: 20px;
     text-decoration: none;
-    transition: color 0.2s ease;
+    font-size: 18px;
+    color: #F0E6D2;
+    transition: color 0.3s ease;
+}
+
+.first a:hover {
+    color: #E4C878;
 }
 
 .first a:hover {
@@ -394,57 +405,6 @@ body > :not(canvas):not(#celestial-bg):not(#dayNightBackground) {
 
 /* ===== MOBILE ===== */
 
-@media (max-width: 600px) {
-    nav.first {
-        justify-content: center;
-        padding: 12px;
-    }
-
-    .first ul {
-        justify-content: center;
-        gap: 12px 20px;
-    }
-
-    .first a,
-    .links-poems a {
-        font-size: 17px;
-    }
-
-    .main-content {
-        width: 94%;
-    }
-
-    .poem-box {
-        margin: 25px auto;
-        padding: 12px;
-    }
-
-    .poem-box label {
-        padding: 14px 8px;
-    }
-
-    .cover,
-    .banner {
-        height: 320px;
-    }
-
-    .nature-cover,
-    .unearthly-cover,
-    .people-cover,
-    .dream-cover {
-        width: 100%;
-        height: 250px;
-    }
-
-    .sect {
-        padding: 18px;
-    }
-
-    #celestial-wheel {
-        width: 75vw;
-    }
-}
-
 /* Respect reduced-motion preferences. */
 
 @media (prefers-reduced-motion: reduce) {
@@ -456,9 +416,23 @@ body > :not(canvas):not(#celestial-bg):not(#dayNightBackground) {
     }
 }
 
-body {
+.first {
     width: 100%;
+    box-sizing: border-box;
+}
+
+.content {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 1px 0 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+    border-radius: 50%;
 }

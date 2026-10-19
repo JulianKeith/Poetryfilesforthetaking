@@ -16,7 +16,7 @@
     </head>
     <body>
         <nav class="first">
-        <img src="logo.pg" alt="Logo" class="logo">
+        <img src="https://github.com/JulianKeith/Poetryfilesforthetaking/blob/main/Screenshot%202026-10-15%2007.39.04.png?raw=true" alt="Logo" class="logo">
           <ul>
             <li><a href="index.html">Introduction</a></li>
             <li><a href="albums.html">Chapbooks</a></li>
@@ -25,6 +25,22 @@
             <li><a href="prettyhappyfordepression.html">Pretty Happy for Depression</a></li>
           </ul>
         </nav>
+        <div class="au-selector">
+    <button id="original-button"
+            class="au-button active"
+            type="button"
+            aria-pressed="true">
+        🌸 Original AU
+    </button>
+
+    <button id="dark-button"
+            class="au-button"
+            type="button"
+            aria-pressed="false">
+        🌑 Dark AU
+    </button>
+</div>
+        <main class="content">
                   <div class="poem-box poem-box-1">
     <input type="checkbox" id="poem-1">
     <label for="poem-1">
@@ -370,7 +386,7 @@ Still.
 
 <div class="poem-box poem-box-9">
     <input type="checkbox" id="poem-9">
-    <label for="poem-9">
+    <label for="poem-9" class="poem-title">
         Other Side
     </label>
     <div class="poem-content">
@@ -413,7 +429,7 @@ Alive.
 
 <div class="poem-box poem-box-10">
     <input type="checkbox" id="poem-10">
-    <label for="poem-10">
+    <label for="poem-10" class="poem-title">
         Not As It Quite Was
     </label>
     <div class="poem-content">
@@ -452,6 +468,135 @@ And for the first time ever
 I want to get out of bed.
     </div>
 </div>
+<script>
 
+const darkPoems = {
+    9: {
+        title: "Other Side",
+        text: `I walk into
+the room.
+Brown belt carried in
+my arms.
+Lock the door behind me
+No one will know… 
+
+I keep a steady grip.
+Thoughts circle my head
+what was
+what is
+what could have been.
+One more…
+Then-
+
+But…
+Is this what I want?
+Is this what I need?
+Breaths come
+And go.
+No…
+NO!!
+
+I weakly raise my arm
+to get a grip
+on life.
+Still
+I’m just
+one moment
+Too late.
+111 
+HELLO? PLEASE RESPOND. OVER.
+`
+    },
+    10: {
+        title: "Not as it Quite Was",
+        text: `
+
+The wind brushes past me 
+a feeling I know.
+The soft glow of the sunset casts 
+upon my face.
+Everything’s frozen, a perfect 
+moment 
+In time.
+
+The old tree sways
+across the yard.
+A swing rocks back
+and forth
+creaking 
+yet empty.
+my childhood 
+In a single moment.
+
+day turns to night
+night turns to dusk.
+Time follows by
+And I float away
+away 
+away
+But still can’t wake
+up.
+
+The wooden walls
+Encompass all.
+the scent of lilies
+Drift through the air.
+People arrive.
+Black cars
+Black clothes.
+Pale face
+A smile 
+I could never make.
+Draining the colour.
+Voices join in a song
+
+Sad
+Bittersweet.
+Something
+I can never
+Join.
+Ever.
+Ever…
+`
+    }
+};
+const originalButton = document.getElementById("original-button");
+const darkButton = document.getElementById("dark-button");
+
+function selectAU(isDark) {
+    document.body.classList.toggle("dark-au", isDark);
+
+    originalButton.classList.toggle("active", !isDark);
+    darkButton.classList.toggle("active", isDark);
+
+    originalButton.setAttribute("aria-pressed", String(!isDark));
+    darkButton.setAttribute("aria-pressed", String(isDark));
+    [9, 10].forEach(number => {
+    const box = document.querySelector(
+        `.poem-box-${number}`
+    );
+
+    const title = box.querySelector(".poem-title");
+    const content = box.querySelector(".poem-content");
+    const checkbox = box.querySelector('input[type="checkbox"]');
+
+    if (isDark) {
+        title.textContent = darkPoems[number].title;
+        content.textContent = darkPoems[number].text;
+    } else {
+        title.textContent = originalPoems[number].title;
+        content.textContent = originalPoems[number].text;
+    }
+
+    checkbox.checked = false;
+});
+    // The poem text switch will go here.
+}
+
+originalButton.addEventListener("click", () => selectAU(false));
+darkButton.addEventListener("click", () => selectAU(true));
+
+</script>
+</main>
     </body>
   </html>
