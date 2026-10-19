@@ -1,7 +1,10 @@
 body {
-    background-color: #E8DDC8;
-    font-family: 'Unkempt', cursive;
-}
+    margin: 0;
+    font-family: Unkempt;
+    background-color: #151515;
+    animation: colourJourney linear both;
+    animation-timeline: scroll(root);
+  }
 
 .first {
     display: flex;
@@ -216,4 +219,202 @@ body {
     display: block;
     flex-shrink: 0;
     border-radius: 50%;
+}
+
+ * {
+    box-sizing: border-box;
+  }
+
+  
+@keyframes colourJourney {
+    0% {
+        background-color: #F7B6D2;
+    }
+
+    10% {
+        background-color: #F28DB8;
+    }
+
+    20% {
+        background-color: #E85D9E;
+    }
+
+    30% {
+        background-color: #b16288;
+    }
+
+    40% {
+        background-color: #7185A5;
+    }
+
+    51% {
+        background-color: #52627E;
+    }
+
+    62% {
+        background-color: #252C58;
+    }
+
+    73% {
+        background-color: #171D3D;
+    }
+
+    84% {
+        background-color: #07070A;
+    }
+
+    100% {
+        background-color: #F28C28;
+    }
+}
+
+  section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: clamp(2rem, 7vw, 5rem);
+  }
+
+
+/* ORIGINAL AU */
+body {
+    --page-bg: #F7B6D2;
+    --text-color: #241724;
+    --nav-bg: #E85D9E;
+    --accent: #C477A5;
+
+    background-color: var(--page-bg);
+    color: var(--text-color);
+    transition: background-color 1s ease,
+                color 0.5s ease;
+}
+
+/* DARK AU */
+body.dark-au {
+    --page-bg: #17131F;
+    --text-color: #E5D8F5;
+    --nav-bg: #30243D;
+    --accent: #8D526F;
+
+    background-color: var(--page-bg);
+    color: var(--text-color);
+}
+
+/* Example: elements that use the theme */
+.first {
+    background-color: var(--nav-bg);
+    transition: background-color 0.8s ease;
+}
+
+
+/* AU buttons beneath the navigation */
+.au-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+
+.au-button {
+    padding: 12px 24px;
+    border: 2px solid #C477A5;
+    border-radius: 30px;
+    background: #F7B6D2;
+    color: #241724;
+    font-family: 'Unkempt', cursive;
+    font-size: 18px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.au-button:hover {
+    transform: translateY(-2px);
+}
+
+.au-button.active {
+    background: #C477A5;
+    color: white;
+    border-color: #C477A5;
+}
+
+/* Dark AU button appearance */
+body.dark-au .au-button {
+    background: #211B2B;
+    color: #E5D8F5;
+    border-color: #8D526F;
+}
+
+body.dark-au .au-button.active {
+    background: #8D526F;
+    color: white;
+}
+
+@keyframes darkColourJourney {
+    0% {
+        background-color: #F7B6D2;
+    }
+
+    10% {
+        background-color: #F28DB8;
+    }
+
+    20% {
+        background-color: #E85D9E;
+    }
+
+    30% {
+        background-color: #b16288;
+    }
+
+    40% {
+        background-color: #7185A5;
+    }
+
+    51% {
+        background-color: #52627E;
+    }
+
+    62% {
+        background-color: #252C58;
+    }
+
+    73% {
+        background-color: #171D3D;
+    }
+
+    84% {
+        background-color: #12121c;
+    }
+
+    100% {
+        background-color: #000000;
+    }
+}
+
+body.dark-au {
+    animation-name: darkColourJourney;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(root);
+}
+
+
+/* Dark AU — poem box 10 */
+body.dark-au .poem-box-10 {
+    background: linear-gradient(
+        to bottom,
+        #08070B,
+        #191321,
+        #30203B,
+        #493047
+    );
 }
