@@ -231,40 +231,40 @@ body {
         background-color: #F7B6D2;
     }
 
-    10% {
-        background-color: #F28DB8;
-    }
-
-    20% {
-        background-color: #E85D9E;
+    15% {
+        background-color: #ff97c4;
     }
 
     30% {
-        background-color: #b16288;
+        background-color: #ff6bb0;
     }
 
-    40% {
-        background-color: #7185A5;
+    45% {
+        background-color: #b162b0;
     }
 
-    51% {
-        background-color: #52627E;
+    54% {
+        background-color: #7178a5;
     }
 
     62% {
-        background-color: #252C58;
+        background-color: #52627E;
     }
 
     73% {
-        background-color: #171D3D;
+        background-color: #252C58;
     }
 
     84% {
+        background-color: #171D3D;
+    }
+
+    94% {
         background-color: #07070A;
     }
 
     100% {
-        background-color: #864e15c4;
+        background-color: #ad5700b6;
     }
 }
 
