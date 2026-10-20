@@ -264,7 +264,7 @@ body {
     }
 
     100% {
-        background-color: #F28C28;
+        background-color: #864e15c4;
     }
 }
 
@@ -359,15 +359,15 @@ body.dark-au .au-button.active {
 
 @keyframes darkColourJourney {
     0% {
-        background-color: #F7B6D2;
+        background-color: #f7b6d2c0;
     }
 
     10% {
-        background-color: #F28DB8;
+        background-color: #f28db991;
     }
 
     20% {
-        background-color: #E85D9E;
+        background-color: #e85d9e8a;
     }
 
     30% {
