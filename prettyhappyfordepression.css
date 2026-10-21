@@ -1,10 +1,56 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
+    --page-bg: #F7B6D2;
+    --text-color: #241724;
+    --nav-bg: #292B46;
+    --accent: #C477A5;
+
     margin: 0;
-    font-family: Unkempt;
-    background-color: #151515;
+    font-family: 'Unkempt', cursive;
+    background-color: var(--page-bg);
+    color: var(--text-color);
+
     animation: colourJourney linear both;
     animation-timeline: scroll(root);
-  }
+
+    transition:
+        background-color 0.5s ease,
+        color 0.5s ease;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    width: 100%;
+    min-height: 70px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        110deg,
+        #252436 0%,
+        #292B46 55%,
+        #354C78 100%
+    );
+
+    border-radius: 16px;
+}
 
 .first {
     display: flex;
@@ -52,6 +98,67 @@ body {
     object-fit: cover;
 }
 
+.logo {
+    display: block;
+    flex-shrink: 0;
+
+    width: 60px;
+    height: 60px;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cover {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.sect {
+    margin-bottom: 20px;
+}
+
+section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: clamp(2rem, 7vw, 5rem);
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+#introduction {
+    text-align: center;
+    background-color: #CEBFA3;
+    color: #2F2925;
+
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   POEM BOXES
+========================= */
+
 .poem-box {
     width: 80%;
     margin: 50px auto;
@@ -59,40 +166,60 @@ body {
     border-radius: 20px;
 }
 
+/* Gradient progression */
+
 .poem-box-1 {
-    background: linear-gradient(to bottom, #F7B6D2, #F28DB8);
+    background: linear-gradient(
+        to bottom, #F7B6D2, #F28DB8
+    );
 }
 
 .poem-box-2 {
-    background: linear-gradient(to bottom, #F28DB8, #E85D9E);
+    background: linear-gradient(
+        to bottom, #F28DB8, #E85D9E
+    );
 }
 
 .poem-box-3 {
-    background: linear-gradient(to bottom, #E85D9E, #A84B91);
+    background: linear-gradient(
+        to bottom, #E85D9E, #A84B91
+    );
 }
 
 .poem-box-4 {
-    background: linear-gradient(to bottom, #A84B91, #5B4A8F);
+    background: linear-gradient(
+        to bottom, #A84B91, #5B4A8F
+    );
 }
 
 .poem-box-5 {
-    background: linear-gradient(to bottom, #5B4A8F, #343B70);
+    background: linear-gradient(
+        to bottom, #5B4A8F, #343B70
+    );
 }
 
 .poem-box-6 {
-    background: linear-gradient(to bottom, #343B70, #252C58);
+    background: linear-gradient(
+        to bottom, #343B70, #252C58
+    );
 }
 
 .poem-box-7 {
-    background: linear-gradient(to bottom, #252C58, #171D3D);
+    background: linear-gradient(
+        to bottom, #252C58, #171D3D
+    );
 }
 
 .poem-box-8 {
-    background: linear-gradient(to bottom, #171D3D, #0B1025);
+    background: linear-gradient(
+        to bottom, #171D3D, #0B1025
+    );
 }
 
 .poem-box-9 {
-    background: linear-gradient(to bottom, #0B1025, #07070A);
+    background: linear-gradient(
+        to bottom, #0B1025, #07070A
+    );
 }
 
 .poem-box-10 {
@@ -108,6 +235,8 @@ body {
         #FFB347 100%
     );
 }
+
+/* Individual poem title fonts */
 
 .poem-box-1 label {
     font-family: 'Pacifico', cursive;
@@ -149,102 +278,189 @@ body {
     font-family: 'UnifrakturCook', cursive;
 }
 
-.poem-box input {
-    display: none;
-}
+/* Poem title labels */
 
 .poem-box label {
     display: block;
     padding: 20px;
-    color: #fff5f7;
+
+    color: #FFF5F7;
     font-size: 30px;
     text-align: center;
+
     cursor: pointer;
 }
 
+/* Hide checkbox controls */
+
+.poem-box input {
+    display: none;
+}
+
+/* Expandable poem content */
 
 .poem-content {
-    font-family: 'Unkempt', serif;
-
     max-height: 0;
     overflow: hidden;
     opacity: 0;
 
+    font-family: 'Unkempt', cursive;
+    color: antiquewhite;
+
+    white-space: pre-line;
+    line-height: 1.2;
+
     transition:
         max-height 0.8s ease,
         opacity 0.5s ease;
-        color:antiquewhite;
-    white-space: pre-line;
-    line-height: 1.2;
 }
+
+/* Open poem when its checkbox is checked */
+
 .poem-box input:checked ~ .poem-content {
     max-height: 5000px;
     opacity: 1;
 }
 
-.sect {
-    margin-bottom: 20px;
-}
-
-#introduction {
-    text-align: center;
-    background-color: #cebfa3;
-    color: #2F2925;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
+/* Special poem text colors */
 
 #poem-box-1 .poem-content,
 #poem-box-2 .poem-content,
 #poem-box-3 .poem-content {
-    color: #eaf9fd;
+    color: #EAF9FD;
 }
+
+/* =========================
+   ORIGINAL AU THEME
+========================= */
+
+body:not(.dark-au) {
+    --page-bg: #F7B6D2;
+    --text-color: #241724;
+    --nav-bg: #292B46;
+    --accent: #C477A5;
+}
+
+/* =========================
+   DARK AU THEME
+========================= */
+
+body.dark-au {
+    --page-bg: #17131F;
+    --text-color: #E5D8F5;
+    --nav-bg: #30243D;
+    --accent: #8D526F;
+
+    animation-name: darkColourJourney;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(root);
+}
+
+/* Navigation theme */
 
 .first {
-    width: 100%;
-    box-sizing: border-box;
+    transition: background-color 0.8s ease;
 }
 
-.content {
-    max-width: 1000px;
-    margin: 0 auto;
+body.dark-au .first {
+    background: var(--nav-bg);
+}
+
+/* Dark AU poem box 10 */
+
+body.dark-au .poem-box-10 {
+    background: linear-gradient(
+        to bottom,
+        #08070B,
+        #191321,
+        #30203B,
+        #493047
+    );
+}
+
+/* =========================
+   AU SELECTOR BUTTONS
+========================= */
+
+.au-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin: 0 auto 30px;
     padding: 0 20px;
-    box-sizing: border-box;
 }
 
-.logo {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    display: block;
-    flex-shrink: 0;
-    border-radius: 50%;
+.au-button {
+    padding: 12px 24px;
+
+    border: 2px solid #C477A5;
+    border-radius: 30px;
+
+    background: #F7B6D2;
+    color: #241724;
+
+    font-family: 'Unkempt', cursive;
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
- * {
-    box-sizing: border-box;
-  }
+.au-button:hover {
+    transform: translateY(-2px);
+}
 
-  
+.au-button.active {
+    background: #C477A5;
+    color: white;
+    border-color: #C477A5;
+}
+
+/* Dark AU buttons */
+
+body.dark-au .au-button {
+    background: #211B2B;
+    color: #E5D8F5;
+    border-color: #8D526F;
+}
+
+body.dark-au .au-button.active {
+    background: #8D526F;
+    color: white;
+}
+
+/* =========================
+   ORIGINAL AU SCROLL ANIMATION
+========================= */
+
 @keyframes colourJourney {
     0% {
         background-color: #F7B6D2;
     }
 
     15% {
-        background-color: #ff97c4;
+        background-color: #FF97C4;
     }
 
     30% {
-        background-color: #ff6bb0;
+        background-color: #FF6BB0;
     }
 
     45% {
-        background-color: #b162b0;
+        background-color: #B162B0;
     }
 
     54% {
-        background-color: #7178a5;
+        background-color: #7178A5;
     }
 
     62% {
@@ -264,114 +480,29 @@ body {
     }
 
     100% {
-        background-color: #ad5700b6;
+        background-color: #AD5700B6;
     }
 }
 
-  section {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: clamp(2rem, 7vw, 5rem);
-  }
-
-
-/* ORIGINAL AU */
-body {
-    --page-bg: #F7B6D2;
-    --text-color: #241724;
-    --nav-bg: #E85D9E;
-    --accent: #C477A5;
-
-    background-color: var(--page-bg);
-    color: var(--text-color);
-    transition: background-color 1s ease,
-                color 0.5s ease;
-}
-
-/* DARK AU */
-body.dark-au {
-    --page-bg: #17131F;
-    --text-color: #E5D8F5;
-    --nav-bg: #30243D;
-    --accent: #8D526F;
-
-    background-color: var(--page-bg);
-    color: var(--text-color);
-}
-
-/* Example: elements that use the theme */
-.first {
-    background-color: var(--nav-bg);
-    transition: background-color 0.8s ease;
-}
-
-
-/* AU buttons beneath the navigation */
-.au-selector {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 0 auto 30px;
-    padding: 0 20px;
-}
-
-.au-button {
-    padding: 12px 24px;
-    border: 2px solid #C477A5;
-    border-radius: 30px;
-    background: #F7B6D2;
-    color: #241724;
-    font-family: 'Unkempt', cursive;
-    font-size: 18px;
-    cursor: pointer;
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.au-button:hover {
-    transform: translateY(-2px);
-}
-
-.au-button.active {
-    background: #C477A5;
-    color: white;
-    border-color: #C477A5;
-}
-
-/* Dark AU button appearance */
-body.dark-au .au-button {
-    background: #211B2B;
-    color: #E5D8F5;
-    border-color: #8D526F;
-}
-
-body.dark-au .au-button.active {
-    background: #8D526F;
-    color: white;
-}
+/* =========================
+   DARK AU SCROLL ANIMATION
+========================= */
 
 @keyframes darkColourJourney {
     0% {
-        background-color: #f7b6d2c0;
+        background-color: #F7B6D2C0;
     }
 
     10% {
-        background-color: #f28db991;
+        background-color: #F28DB991;
     }
 
     20% {
-        background-color: #e85d9e8a;
+        background-color: #E85D9E8A;
     }
 
     30% {
-        background-color: #b16288;
+        background-color: #B16288;
     }
 
     40% {
@@ -391,7 +522,7 @@ body.dark-au .au-button.active {
     }
 
     84% {
-        background-color: #12121c;
+        background-color: #12121C;
     }
 
     100% {
@@ -399,22 +530,85 @@ body.dark-au .au-button.active {
     }
 }
 
-body.dark-au {
-    animation-name: darkColourJourney;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-timeline: scroll(root);
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+    .first {
+        justify-content: center;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .first ul {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .first a {
+        font-size: 16px;
+    }
+
+    .content {
+        padding: 0 12px;
+    }
+
+    .cover {
+        height: 280px;
+    }
+
+    .poem-box {
+        width: 100%;
+        margin: 25px auto;
+        padding: 12px;
+    }
+
+    .poem-box label {
+        padding: 15px 8px;
+        font-size: clamp(20px, 6vw, 30px);
+    }
+
+    .poem-content {
+        line-height: 1.5;
+    }
+
+    .au-button {
+        padding: 10px 18px;
+        font-size: 16px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    body,
+    body.dark-au {
+        animation: none;
+    }
 }
 
 
-/* Dark AU — poem box 10 */
-body.dark-au .poem-box-10 {
-    background: linear-gradient(
-        to bottom,
-        #08070B,
-        #191321,
-        #30203B,
-        #493047
-    );
+
+/* Remove navigation bullets */
+.first ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
+
+.first li {
+    list-style: none !important;
+}
+
+.first li::marker {
+    content: "" !important;
+}
+
