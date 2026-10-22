@@ -1,6 +1,6 @@
 body {
     background-color:#E8DDC8;
-    font-family: 'Unkempt', cursive;
+    font-family: 'Architects Daughter', cursive;
 }
 
 
@@ -646,4 +646,76 @@ body {
   font-weight: bold;
   border-radius: 4px;
   pointer-events: none;
+}
+
+.intro-a {
+    text-decoration: none;
+    color: #534f45; /* Matches your label color */
+    font-size: 30px; /* Matches your label font size */
+    transition: color 0.3s ease;
+}
+
+.intro-a:hover {
+    color: #1a1715; /* Shifts darker on hover */
+}
+
+
+/* Chapbook title links */
+.poem-title {
+    display: inline-block;
+    color: inherit;
+    font-family: 'Unkempt', cursive;
+    font-size: 30px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* When the mouse hovers over a title */
+.poem-title:hover {
+    color: #FFFFFF;
+    transform: scale(1.05);
+}
+
+/* When the link is clicked */
+.poem-title:active {
+    transform: scale(0.98);
+}
+
+
+.poem-box.numbers-intro {
+    background:
+        radial-gradient(
+            ellipse at 20% 25%,
+            #F4D4E8 0%,
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 80% 30%,
+            #B8D7F0 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 70% 85%,
+            #C7E7D1 0%,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 25% 80%,
+            #F5D49F 0%,
+            transparent 50%
+        ),
+        #C9B9E8;
+
+    border-radius: 20px;
+}
+
+
+/* POEM BOX TITLES */
+.poem-box label {
+    font-family: 'Unkempt', cursive;
+}
+
+/* POEM BODY TEXT */
+.poem-content {
+    font-family: 'Architects Daughter', cursive;
 }

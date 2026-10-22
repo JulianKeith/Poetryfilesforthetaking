@@ -1,6 +1,6 @@
 body {
     background-color:#E8DDC8;
-    font-family: 'Unkempt', cursive;
+    font-family: 'Architects Daughter', cursive;
 }
 
 .first {
@@ -802,4 +802,18 @@ body.walls-of-the-mind-page .poem-box.mind-intro {
     display: block;
     flex-shrink: 0;
     border-radius: 50%;
+}
+
+
+/* HEADERS — Unkempt */
+h1,
+h2,
+h3,
+.poem-title {
+    font-family: 'Unkempt', cursive;
+}
+
+/* BODY TEXT — Architects Daughter */
+.poem-content {
+    font-family: 'Architects Daughter', cursive;
 }

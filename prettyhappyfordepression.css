@@ -13,7 +13,7 @@ body {
     --accent: #C477A5;
     
     margin: 0;
-    font-family: 'Unkempt', cursive;
+    font-family: 'Architects Daughter', cursive;
     background-color: var(--page-bg);
     color: var(--text-color);
 
@@ -194,22 +194,24 @@ section {
     display: none;
 }
 
+
 /* Expandable poem content */
 .poem-content {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
 
-    font-family: 'Unkempt', cursive;
+    font-family: 'Architects Daughter', cursive;
     color: antiquewhite;
 
     white-space: pre-line;
-    line-height: 1.2;
+    line-height: 1.5;
 
     transition:
         max-height 0.8s ease,
         opacity 0.5s ease;
 }
+
 
 /* Open poem when its checkbox is checked */
 .poem-box input:checked ~ .poem-content {
@@ -352,4 +354,33 @@ body.dark-au .au-button.active {
     73% { background-color: #171D3D; }
     84% { background-color: #12121C; }
     100% { background-color: #000000; }
+}
+
+
+/* HEADERS — Unkempt */
+h1,
+h2,
+h3,
+.poem-title {
+    font-family: 'Unkempt', cursive;
+}
+
+
+/* HEADINGS */
+h1,
+h2,
+h3,
+.poem-title {
+    font-family: 'Unkempt', cursive;
+}
+
+/* NAVIGATION */
+.first a {
+    font-family: 'Architects Daughter', cursive;
+}
+
+/* BODY TEXT */
+body,
+.poem-content {
+    font-family: 'Architects Daughter', cursive;
 }

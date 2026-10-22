@@ -1,6 +1,6 @@
 body {
     background-color:#E8DDC8;
-    font-family: 'Unkempt', cursive;
+    font-family: 'Architects Daughter', cursive;
 }
 
 
@@ -189,13 +189,40 @@ body {
   pointer-events: none;
 }
 
+
+/* MAJOR CHAPBOOK TITLES — UNKEMPT */
 .majorintro label a {
+    display: inline-block;
+    color: inherit;
+    font-family: 'Unkempt', cursive;
+    font-size: 30px;
     text-decoration: none;
-    color: #534f45; /* Matches your label color */
-    font-size: 30px; /* Matches your label font size */
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .majorintro label a:hover {
-    color: #1a1715; /* Shifts darker on hover */
+    color: #FFFFFF;
+    transform: scale(1.05);
+}
+
+/* POEM BOX TITLES — UNKEMPT */
+.poem-box label {
+    font-family: 'Unkempt', cursive;
+}
+
+/* OTHER HEADINGS — UNKEMPT */
+h1,
+h2,
+h3,
+.poem-title {
+    font-family: 'Unkempt', cursive;
+}
+
+/* BODY TEXT — ARCHITECTS DAUGHTER */
+body {
+    font-family: 'Architects Daughter', cursive;
+}
+
+.poem-content {
+    font-family: 'Architects Daughter', cursive;
 }
