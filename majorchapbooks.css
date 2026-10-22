@@ -181,3 +181,10 @@ body {
     list-style-type: none;
     color:#191D3B;
 }
+
+.first a.selected {
+  color: #E4C878;
+  font-weight: bold;
+  border-radius: 4px;
+  pointer-events: none;
+}
