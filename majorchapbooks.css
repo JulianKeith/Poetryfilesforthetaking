@@ -188,3 +188,14 @@ body {
   border-radius: 4px;
   pointer-events: none;
 }
+
+.majorintro label a {
+    text-decoration: none;
+    color: #534f45; /* Matches your label color */
+    font-size: 30px; /* Matches your label font size */
+    transition: color 0.3s ease;
+}
+
+.majorintro label a:hover {
+    color: #1a1715; /* Shifts darker on hover */
+}
