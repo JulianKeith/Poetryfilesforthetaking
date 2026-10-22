@@ -150,7 +150,7 @@ section {
 
 /* Gradient progression */
 
-.poem-box-1 { background: linear-gradient(to bottom, #F7B6D2, #F28DB8); }
+.poem-box-1 { background: linear-gradient(to bottom, #ffa0cc, #F28DB8); }
 .poem-box-2 { background: linear-gradient(to bottom, #F28DB8, #E85D9E); }
 .poem-box-3 { background: linear-gradient(to bottom, #E85D9E, #A84B91); }
 .poem-box-4 { background: linear-gradient(to bottom, #A84B91, #5B4A8F); }
