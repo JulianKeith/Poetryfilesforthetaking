@@ -206,7 +206,7 @@ section {
 .poem-box label {
     display: block;
     padding: 20px;
-    color: #252131;
+    color: #4c416b;
     font-size: 30px;
     text-align: center;
     cursor: pointer;
@@ -227,7 +227,7 @@ section {
     opacity: 0;
 
     font-family: 'Architects Daughter', cursive;
-      color: #252131;
+      color: #4c416b;
 
     white-space: pre-line;
     line-height: 1.5;
@@ -250,4 +250,8 @@ section {
     width: 80%;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.first {
+    width: 100%;
 }
