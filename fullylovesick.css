@@ -165,18 +165,6 @@ section {
 .poem-box-13 { background: linear-gradient(to bottom, #77769F, #686787); }
 
 
-/* Individual poem title fonts */
-.poem-box-1 label { font-family: 'Pacifico', cursive; }
-.poem-box-2 label { font-family: 'Bungee', cursive; }
-.poem-box-3 label { font-family: 'Righteous', sans-serif; }
-.poem-box-4 label { font-family: 'Playfair Display', serif; }
-.poem-box-5 label { font-family: 'Special Elite', cursive; }
-.poem-box-6 label { font-family: 'Caveat', cursive; }
-.poem-box-7 label { font-family: 'Permanent Marker', cursive; }
-.poem-box-8 label { font-family: 'Bebas Neue', sans-serif; }
-.poem-box-9 label { font-family: 'Abril Fatface', serif; }
-.poem-box-10 label { font-family: 'UnifrakturCook', cursive; }
-
 /* Poem title labels */
 .poem-box label {
     display: block;
