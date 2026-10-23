@@ -121,7 +121,6 @@ section {
     align-items: center;
 
     color: white;
-    font-size: clamp(2rem, 7vw, 5rem);
 }
 
 /* =========================
@@ -146,7 +145,7 @@ section {
     margin: 50px auto;
     padding: 20px;
     border-radius: 20px;
-    color: #252131;
+
 }
 
 /* Gradient progression */
@@ -212,6 +211,7 @@ section {
     font-size: 30px;
     text-align: center;
     cursor: pointer;
+    font-family: 'Unkempt', cursive;
 }
 
 /* Hide checkbox controls */
@@ -228,7 +228,7 @@ section {
     opacity: 0;
 
     font-family: 'Architects Daughter', cursive;
-    color: antiquewhite;
+      color: #252131;
 
     white-space: pre-line;
     line-height: 1.5;
@@ -246,9 +246,3 @@ section {
 }
 
 /* Special poem text colors */
-
-.poem-box-1 .poem-content,
-.poem-box-2 .poem-content,
-.poem-box-3 .poem-content {
-    color: #EAF9FD;
-}
