@@ -1,0 +1,253 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --page-bg: #F7B6D2;
+    --text-color: #241724;
+    --nav-bg: #292B46;
+    --accent: #C477A5;
+
+    margin: 0;
+    font-family: 'Architects Daughter', cursive;
+    background-color: var(--page-bg);
+    color: var(--text-color);
+
+    /* FIX: Set a fallback duration so animation properties register cleanly,
+       and let the scroll timeline control the progress */
+    animation: colourJourney 1s linear both;
+    animation-timeline: scroll(root);
+
+    /* FIX: Removed background-color from transition here.
+       The scroll timeline actively manages the background color dynamically. */
+    transition: color 0.5s ease;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.first {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    gap: 20px;
+    justify-content: right;
+    align-items: center;
+
+    width: 100%;
+    min-height: 70px;
+    padding: 15px 25px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        110deg,
+        #252436 0%,
+        #292B46 55%,
+        #354C78 100%
+    );
+
+    border-radius: 16px;
+    transition: background-color 0.8s ease, background 0.8s ease;
+}
+
+.first ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+
+    margin: 0 0 0 auto !important;
+    padding: 0;
+}
+
+.first a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Unkempt', cursive;
+    font-size: 18px;
+    color: #F0E6D2;
+    transition: color 0.3s ease;
+}
+
+.first a:hover {
+    color: #E4C878;
+}
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: auto !important;
+}
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cover {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.sect {
+    margin-bottom: 20px;
+}
+
+section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+#introduction {
+    text-align: center;
+    background-color: #CEBFA3;
+    color: #2F2925;
+
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   POEM BOXES
+========================= */
+
+.poem-box {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+
+}
+
+/* Gradient progression */
+
+.poem-box-1 {
+    background: linear-gradient(to bottom, #F8DDE8, #F4C7DC);
+}
+
+.poem-box-2 {
+    background: linear-gradient(to bottom, #F4C7DC, #F6B9AD);
+}
+
+.poem-box-3 {
+    background: linear-gradient(to bottom, #F6B9AD, #F8C99F);
+}
+
+.poem-box-4 {
+    background: linear-gradient(to bottom, #F8C99F, #F5D7B5);
+}
+
+.poem-box-5 {
+    background: linear-gradient(to bottom, #F5D7B5, #EFC8C8);
+}
+
+.poem-box-6 {
+    background: linear-gradient(to bottom, #EFC8C8, #E5B6CE);
+}
+
+.poem-box-7 {
+    background: linear-gradient(to bottom, #E5B6CE, #D8ACD0);
+}
+
+.poem-box-8 {
+    background: linear-gradient(to bottom, #D8ACD0, #C5A8D2);
+}
+
+.poem-box-9 {
+    background: linear-gradient(to bottom, #C5A8D2, #B4A5D0);
+}
+
+.poem-box-10 {
+    background: linear-gradient(to bottom, #B4A5D0, #B4A5D0);
+}
+
+.poem-box-11 {
+    background: linear-gradient(to bottom, #B4A5D0, #9995C1);
+}
+
+.poem-box-12 {
+    background: linear-gradient(to bottom, #9995C1, #77769F);
+}
+
+.poem-box-13 {
+    background: linear-gradient(to bottom, #77769F, #686787);
+}
+
+/* Poem title labels */
+
+.poem-box label {
+    display: block;
+    padding: 20px;
+    color: #252131;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Unkempt', cursive;
+}
+
+/* Hide checkbox controls */
+
+.poem-box input {
+    display: none;
+}
+
+/* Expandable poem content */
+
+.poem-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    font-family: 'Architects Daughter', cursive;
+      color: #252131;
+
+    white-space: pre-line;
+    line-height: 1.5;
+
+    transition:
+        max-height 0.8s ease,
+        opacity 0.5s ease;
+}
+
+/* Open poem when its checkbox is checked */
+
+.poem-box input:checked ~ .poem-content {
+    max-height: 5000px;
+    opacity: 1;
+}
+
+/* Special poem text colors */
+
+.main-content {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}

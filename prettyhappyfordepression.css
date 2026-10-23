@@ -1,18 +1,48 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
+    --page-bg: #F7B6D2;
+    --text-color: #241724;
+    --nav-bg: #292B46;
+    --accent: #C477A5;
+    
     margin: 0;
-    font-family: Unkempt;
-    background-color: #151515;
-    animation: colourJourney linear both;
+    font-family: 'Architects Daughter', cursive;
+    background-color: var(--page-bg);
+    color: var(--text-color);
+
+    /* FIX: Set a fallback duration so animation properties register cleanly, 
+       and let the scroll timeline control the progress */
+    animation: colourJourney 1s linear both;
     animation-timeline: scroll(root);
-  }
+
+    /* FIX: Removed background-color from transition here. 
+       The scroll timeline actively manages the background color dynamically. */
+    transition: color 0.5s ease;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .first {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    list-style: none;
+    text-decoration: none;
     gap: 20px;
+    justify-content: right;
+    align-items: center; /* FIX: Centers everything perfectly vertically */
+
+    width: 100%;
     min-height: 70px;
-    padding: 10px 20px;
+    padding: 15px 25px;   /* FIX: Slightly more internal breathing room */ 
+    margin-bottom: 25px;
     box-sizing: border-box;
 
     background: linear-gradient(
@@ -23,20 +53,25 @@ body {
     );
 
     border-radius: 16px;
-    margin-bottom: 25px;
+    transition: background-color 0.8s ease, background 0.8s ease;
 }
 
 .first ul {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     list-style: none;
     gap: 20px;
-    margin: 0;
+
+    margin: 0 0 0 auto !important; /* FIX: Removed top margin so links stay vertically centered */
     padding: 0;
 }
 
+
 .first a {
+    display: inline-block;
     text-decoration: none;
+    font-family: 'Unkempt', cursive;
     font-size: 18px;
     color: #F0E6D2;
     transition: color 0.3s ease;
@@ -46,11 +81,65 @@ body {
     color: #E4C878;
 }
 
+.logo {
+  display: block;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: auto !important;
+}
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .cover {
+    display: block;
     width: 100%;
     height: 500px;
     object-fit: cover;
 }
+
+.sect {
+    margin-bottom: 20px;
+}
+
+section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: clamp(2rem, 7vw, 5rem);
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+#introduction {
+    text-align: center;
+    background-color: #CEBFA3;
+    color: #2F2925;
+
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   POEM BOXES
+========================= */
 
 .poem-box {
     width: 80%;
@@ -59,257 +148,134 @@ body {
     border-radius: 20px;
 }
 
-.poem-box-1 {
-    background: linear-gradient(to bottom, #F7B6D2, #F28DB8);
-}
+/* Gradient progression */
 
-.poem-box-2 {
-    background: linear-gradient(to bottom, #F28DB8, #E85D9E);
-}
-
-.poem-box-3 {
-    background: linear-gradient(to bottom, #E85D9E, #A84B91);
-}
-
-.poem-box-4 {
-    background: linear-gradient(to bottom, #A84B91, #5B4A8F);
-}
-
-.poem-box-5 {
-    background: linear-gradient(to bottom, #5B4A8F, #343B70);
-}
-
-.poem-box-6 {
-    background: linear-gradient(to bottom, #343B70, #252C58);
-}
-
-.poem-box-7 {
-    background: linear-gradient(to bottom, #252C58, #171D3D);
-}
-
-.poem-box-8 {
-    background: linear-gradient(to bottom, #171D3D, #0B1025);
-}
-
-.poem-box-9 {
-    background: linear-gradient(to bottom, #0B1025, #07070A);
-}
-
+.poem-box-1 { background: linear-gradient(to bottom, #ffa0cc, #F28DB8); }
+.poem-box-2 { background: linear-gradient(to bottom, #F28DB8, #E85D9E); }
+.poem-box-3 { background: linear-gradient(to bottom, #E85D9E, #A84B91); }
+.poem-box-4 { background: linear-gradient(to bottom, #A84B91, #5B4A8F); }
+.poem-box-5 { background: linear-gradient(to bottom, #5B4A8F, #343B70); }
+.poem-box-6 { background: linear-gradient(to bottom, #343B70, #252C58); }
+.poem-box-7 { background: linear-gradient(to bottom, #252C58, #171D3D); }
+.poem-box-8 { background: linear-gradient(to bottom, #171D3D, #0B1025); }
+.poem-box-9 { background: linear-gradient(to bottom, #0B1025, #07070A); }
 .poem-box-10 {
     background: linear-gradient(
         180deg,
-        #050505 0%,
-        #050505 15%,
-        #251006 25%,
-        #3A1808 40%,
-        #7A2B08 60%,
-        #A83D0A 75%,
-        #F28C28 90%,
-        #FFB347 100%
+        #050505 0%, #050505 15%, #251006 25%, #3A1808 40%,
+        #7A2B08 60%, #A83D0A 75%, #F28C28 90%, #FFB347 100%
     );
 }
 
-.poem-box-1 label {
-    font-family: 'Pacifico', cursive;
-}
+/* Individual poem title fonts */
+.poem-box-1 label { font-family: 'Pacifico', cursive; }
+.poem-box-2 label { font-family: 'Bungee', cursive; }
+.poem-box-3 label { font-family: 'Righteous', sans-serif; }
+.poem-box-4 label { font-family: 'Playfair Display', serif; }
+.poem-box-5 label { font-family: 'Special Elite', cursive; }
+.poem-box-6 label { font-family: 'Caveat', cursive; }
+.poem-box-7 label { font-family: 'Permanent Marker', cursive; }
+.poem-box-8 label { font-family: 'Bebas Neue', sans-serif; }
+.poem-box-9 label { font-family: 'Abril Fatface', serif; }
+.poem-box-10 label { font-family: 'UnifrakturCook', cursive; }
 
-.poem-box-2 label {
-    font-family: 'Bungee', cursive;
-}
-
-.poem-box-3 label {
-    font-family: 'Righteous', sans-serif;
-}
-
-.poem-box-4 label {
-    font-family: 'Playfair Display', serif;
-}
-
-.poem-box-5 label {
-    font-family: 'Special Elite', cursive;
-}
-
-.poem-box-6 label {
-    font-family: 'Caveat', cursive;
-}
-
-.poem-box-7 label {
-    font-family: 'Permanent Marker', cursive;
-}
-
-.poem-box-8 label {
-    font-family: 'Bebas Neue', sans-serif;
-}
-
-.poem-box-9 label {
-    font-family: 'Abril Fatface', serif;
-}
-
-.poem-box-10 label {
-    font-family: 'UnifrakturCook', cursive;
-}
-
-.poem-box input {
-    display: none;
-}
-
+/* Poem title labels */
 .poem-box label {
     display: block;
     padding: 20px;
-    color: #fff5f7;
+    color: #FFF5F7;
     font-size: 30px;
     text-align: center;
     cursor: pointer;
 }
 
+/* Hide checkbox controls */
+.poem-box input {
+    display: none;
+}
 
+
+/* Expandable poem content */
 .poem-content {
-    font-family: 'Unkempt', serif;
-
     max-height: 0;
     overflow: hidden;
     opacity: 0;
 
+    font-family: 'Architects Daughter', cursive;
+    color: antiquewhite;
+
+    white-space: pre-line;
+    line-height: 1.5;
+
     transition:
         max-height 0.8s ease,
         opacity 0.5s ease;
-        color:antiquewhite;
-    white-space: pre-line;
-    line-height: 1.2;
 }
+
+
+/* Open poem when its checkbox is checked */
 .poem-box input:checked ~ .poem-content {
     max-height: 5000px;
     opacity: 1;
 }
 
-.sect {
-    margin-bottom: 20px;
-}
-
-#introduction {
-    text-align: center;
-    background-color: #cebfa3;
-    color: #2F2925;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
+/* Special poem text colors */
 #poem-box-1 .poem-content,
 #poem-box-2 .poem-content,
 #poem-box-3 .poem-content {
-    color: #eaf9fd;
+    color: #EAF9FD;
 }
 
-.first {
-    width: 100%;
-    box-sizing: border-box;
-}
+/* =========================
+   ORIGINAL AU THEME
+========================= */
 
-.content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.logo {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    display: block;
-    flex-shrink: 0;
-    border-radius: 50%;
-}
-
- * {
-    box-sizing: border-box;
-  }
-
-  
-@keyframes colourJourney {
-    0% {
-        background-color: #F7B6D2;
-    }
-
-    10% {
-        background-color: #F28DB8;
-    }
-
-    20% {
-        background-color: #E85D9E;
-    }
-
-    30% {
-        background-color: #b16288;
-    }
-
-    40% {
-        background-color: #7185A5;
-    }
-
-    51% {
-        background-color: #52627E;
-    }
-
-    62% {
-        background-color: #252C58;
-    }
-
-    73% {
-        background-color: #171D3D;
-    }
-
-    84% {
-        background-color: #07070A;
-    }
-
-    100% {
-        background-color: #F28C28;
-    }
-}
-
-  section {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: clamp(2rem, 7vw, 5rem);
-  }
-
-
-/* ORIGINAL AU */
-body {
+body:not(.dark-au) {
     --page-bg: #F7B6D2;
     --text-color: #241724;
-    --nav-bg: #E85D9E;
+    --nav-bg: #292B46;
     --accent: #C477A5;
-
-    background-color: var(--page-bg);
-    color: var(--text-color);
-    transition: background-color 1s ease,
-                color 0.5s ease;
+    
+    /* FIX: Re-bind original animation cleanly when dark class isn't present */
+    animation-name: colourJourney; 
 }
 
-/* DARK AU */
+/* =========================
+   DARK AU THEME
+========================= */
+
 body.dark-au {
     --page-bg: #17131F;
     --text-color: #E5D8F5;
     --nav-bg: #30243D;
     --accent: #8D526F;
 
-    background-color: var(--page-bg);
-    color: var(--text-color);
+    /* FIX: Ensure scroll context properties remain unified */
+    animation-name: darkColourJourney;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(root);
 }
 
-/* Example: elements that use the theme */
-.first {
-    background-color: var(--nav-bg);
-    transition: background-color 0.8s ease;
+body.dark-au .first {
+    background: var(--nav-bg);
 }
 
+body.dark-au .poem-box-10 {
+    background: linear-gradient(
+        to bottom,
+        #08070B,
+        #191321,
+        #30203B,
+        #493047
+    );
+}
 
-/* AU buttons beneath the navigation */
+/* =========================
+   AU SELECTOR BUTTONS
+========================= */
+
 .au-selector {
     display: flex;
     justify-content: center;
@@ -345,7 +311,6 @@ body.dark-au {
     border-color: #C477A5;
 }
 
-/* Dark AU button appearance */
 body.dark-au .au-button {
     background: #211B2B;
     color: #E5D8F5;
@@ -357,64 +322,65 @@ body.dark-au .au-button.active {
     color: white;
 }
 
+/* =========================
+   ORIGINAL AU SCROLL ANIMATION
+========================= */
+
+@keyframes colourJourney {
+    0% { background-color: #F7B6D2; }
+    15% { background-color: #FF97C4; }
+    30% { background-color: #FF6BB0; }
+    45% { background-color: #B162B0; }
+    54% { background-color: #7178A5; }
+    62% { background-color: #52627E; }
+    73% { background-color: #252C58; }
+    84% { background-color: #171D3D; }
+    94% { background-color: #07070A; }
+    100% { background-color: #AD5700B6; }
+}
+
+/* =========================
+   DARK AU SCROLL ANIMATION
+========================= */
+
 @keyframes darkColourJourney {
-    0% {
-        background-color: #F7B6D2;
-    }
-
-    10% {
-        background-color: #F28DB8;
-    }
-
-    20% {
-        background-color: #E85D9E;
-    }
-
-    30% {
-        background-color: #b16288;
-    }
-
-    40% {
-        background-color: #7185A5;
-    }
-
-    51% {
-        background-color: #52627E;
-    }
-
-    62% {
-        background-color: #252C58;
-    }
-
-    73% {
-        background-color: #171D3D;
-    }
-
-    84% {
-        background-color: #12121c;
-    }
-
-    100% {
-        background-color: #000000;
-    }
-}
-
-body.dark-au {
-    animation-name: darkColourJourney;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
-    animation-timeline: scroll(root);
+    0% { background-color: #F7B6D2C0; }
+    10% { background-color: #F28DB991; }
+    20% { background-color: #E85D9E8A; }
+    30% { background-color: #B16288; }
+    40% { background-color: #7185A5; }
+    51% { background-color: #52627E; }
+    62% { background-color: #252C58; }
+    73% { background-color: #171D3D; }
+    84% { background-color: #12121C; }
+    100% { background-color: #000000; }
 }
 
 
-/* Dark AU — poem box 10 */
-body.dark-au .poem-box-10 {
-    background: linear-gradient(
-        to bottom,
-        #08070B,
-        #191321,
-        #30203B,
-        #493047
-    );
+/* HEADERS — Unkempt */
+h1,
+h2,
+h3,
+.poem-title {
+    font-family: 'Unkempt', cursive;
+}
+
+
+/* HEADINGS */
+h1,
+h2,
+h3,
+.poem-title {
+    font-family: 'Unkempt', cursive;
+}
+
+/* NAVIGATION */
+.first a {
+    font-family: 'Architects Daughter', cursive;
+}
+
+/* BODY TEXT */
+body,
+.poem-content {
+    font-family: 'Architects Daughter', cursive;
 }

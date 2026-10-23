@@ -1,34 +1,67 @@
 body {
     background-color:#E8DDC8;
-    font-family: 'Unkempt', cursive;
+    font-family: 'Architects Daughter', cursive;
 }
 
 .first {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    padding: 10px;
+    list-style: none;
+    text-decoration: none;
+    gap: 20px;
+    justify-content: right;
+    align-items: center; /* FIX: Centers everything perfectly vertically */
+
+    width: 100%;
+    min-height: 70px;
+    padding: 15px 25px;   /* FIX: Slightly more internal breathing room */ 
+    margin-bottom: 25px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        110deg,
+        #252436 0%,
+        #292B46 55%,
+        #354C78 100%
+    );
+
+    border-radius: 16px;
+    transition: background-color 0.8s ease, background 0.8s ease;
 }
 
 .first ul {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     list-style: none;
-    gap: 45px;
-    margin: 0;
+    gap: 20px;
+
+    margin: 0 0 0 auto !important; /* FIX: Removed top margin so links stay vertically centered */
     padding: 0;
 }
 
+
 .first a {
+    display: inline-block;
     text-decoration: none;
-    font-size: 20px;
-    color: #6d685e;
+    font-family: 'Unkempt', cursive;
+    font-size: 18px;
+    color: #F0E6D2;
+    transition: color 0.3s ease;
 }
 
 .first a:hover {
-    color: #1a1715;
+    color: #E4C878;
 }
 
+.logo {
+  display: block;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: auto !important;
+}
 .cover {
     width: 100%;
     height: 500px;
@@ -769,4 +802,18 @@ body.walls-of-the-mind-page .poem-box.mind-intro {
     display: block;
     flex-shrink: 0;
     border-radius: 50%;
+}
+
+
+/* HEADERS — Unkempt */
+h1,
+h2,
+h3,
+.poem-title {
+    font-family: 'Unkempt', cursive;
+}
+
+/* BODY TEXT — Architects Daughter */
+.poem-content {
+    font-family: 'Architects Daughter', cursive;
 }

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: 'Unkempt', cursive;
+    font-family: 'Architects Daughter', cursive;
     background-color: #080b12;
     background-image:
         repeating-linear-gradient(
@@ -90,7 +90,6 @@ nav.first,
     width: 80%;
     margin: 50px auto;
     padding: 20px;
-    box-sizing: border-box;
     background: linear-gradient(
         145deg,
         rgba(15, 24, 42, 0.96),
@@ -186,6 +185,7 @@ nav.first,
 }
 
 /* Mobile */
+@media (max-width: 768px) {
     .first ul {
         justify-content: center;
         gap: 14px;
@@ -207,9 +207,75 @@ nav.first,
     .banner-text h1 {
         font-size: 36px;
     }
+}
+
+/* Global Content Layout (Applies to all screens) */
 .content {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+}
+
+/* Progressive Shrinking Effect (Poems 1 to 5) */
+
+/* Poem 1: Baseline (100% Size) */
+.poem-box:has(#poem-1) {
+    transform: scale(1.0);
+}
+
+/* Poem 2: 90% Size */
+.poem-box:has(#poem-2) {
+    transform: scale(0.90);
+}
+
+/* Poem 3: 80% Size */
+.poem-box:has(#poem-3) {
+    transform: scale(0.80);
+}
+
+/* Poem 4: 70% Size */
+.poem-box:has(#poem-4) {
+    transform: scale(0.70);
+}
+
+/* Poem 5 through 10: Hold steady at 60% Size */
+.poem-box:has(#poem-5) {
+    transform: scale(0.75);
+}
+
+.poem-box:has(#poem-6) {
+    transform: scale(0.75);
+}
+.poem-box:has(#poem-7) {
+    transform: scale(0.85);
+}
+.poem-box:has(#poem-8) {
+    transform: scale(0.95);
+}
+.poem-box:has(#poem-9) {
+    transform: scale(0.98);
+}
+.poem-box:has(#poem-10) {
+    transform: scale(1.0);
+}
+
+/* Keeps spacing smooth between the shrinking cards */
+.poem-box {
+    transform-origin: top center;
+    margin-bottom: 20px;
+}
+
+
+/* HEADERS — Unkempt */
+h1,
+h2,
+h3,
+.poem-title {
+    font-family: 'Unkempt', cursive;
+}
+
+/* BODY TEXT — Architects Daughter */
+.poem-content {
+    font-family: 'Architects Daughter', cursive;
 }
