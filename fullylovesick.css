@@ -245,3 +245,9 @@ section {
 }
 
 /* Special poem text colors */
+
+.main-content {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
