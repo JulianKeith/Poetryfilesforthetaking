@@ -29,6 +29,9 @@
 <body>
   <main class="content">
 
+<div class="heart-background" aria-hidden="true"></div>
+
+
     <nav class="first">
         <img
             src="https://github.com/JulianKeith/Poetryfilesforthetaking/blob/main/Screenshot%202026-10-15%2007.39.04.png?raw=true"
@@ -581,6 +584,39 @@ They taste like before
 A sweet kiss.
 </div>
     </div>
+    <script>
+const heartBackground = document.querySelector(".heart-background");
+
+if (heartBackground && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const heartColors = [
+        "#F4A7C5",
+        "#E88DB8",
+        "#D8ACD0",
+        "#C5A8D2",
+        "#FFF0F5"
+    ];
+
+    for (let i = 0; i < 250; i++) {
+        const heart = document.createElement("span");
+
+        heart.className = "floating-heart";
+        heart.textContent = Math.random() > 0.4 ? "♥" : "♡";
+
+        heart.style.setProperty("--left", Math.random() * 100 + "%");
+        heart.style.setProperty("--size", (14 + Math.random() * 24) + "px");
+        heart.style.setProperty("--duration", (9 + Math.random() * 12) + "s");
+        heart.style.setProperty("--delay", (-Math.random() * 20) + "s");
+        heart.style.setProperty("--drift", (-60 + Math.random() * 120) + "px");
+        heart.style.setProperty("--spin", (Math.random() * 100 - 50) + "deg");
+        heart.style.setProperty(
+            "--heart-color",
+            heartColors[Math.floor(Math.random() * heartColors.length)]
+        );
+
+        heartBackground.appendChild(heart);
+    }
+}
+</script>
 </main>
 </body>
 </html>
