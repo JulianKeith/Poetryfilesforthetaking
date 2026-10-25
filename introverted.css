@@ -1,0 +1,456 @@
+/* =========================================
+   THE LONELY INTROVERT
+   Quiet thoughts. Muted colours. Heavy silence.
+========================================= */
+
+/* ---------- COLOUR VARIABLES ---------- */
+
+:root {
+    --page-bg: #D8E0E8;
+    --text-color: #303945;
+    --nav-bg: #292B46;
+    --accent: #8A9FB5;
+
+    --box-text: #303945;
+    --box-shadow: rgba(42, 52, 67, 0.15);
+}
+
+/* ---------- GLOBAL STYLES ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--text-color);
+    font-family: "Architects Daughter", cursive;
+    overflow-x: hidden;
+}
+
+/* Keep the existing shared navbar CSS in your main stylesheet.
+   Do not redefine .first here. */
+
+/* ---------- FLOATING DOT BACKGROUND ---------- */
+
+.dot-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Each dot is created by the JavaScript in the HTML. */
+
+.dot-background span {
+    position: absolute;
+    bottom: -30px;
+    display: block;
+    border-radius: 50%;
+    background: rgba(92, 116, 143, 0.3);
+    animation: dot-float linear infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes dot-float {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    85% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate3d(var(--drift, 30px), -110vh, 0);
+        opacity: 0;
+    }
+}
+
+/* ---------- MAIN CONTENT ---------- */
+
+.content {
+    position: relative;
+    z-index: 1;
+    width: min(100% - 32px, 1000px);
+    margin: 0 auto;
+    padding: 35px 0 70px;
+}
+
+/* ---------- CHAPBOOK COVER ---------- */
+
+.cover {
+    min-height: 300px;
+    padding: 55px 25px;
+    margin: 20px 0 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #C4D3E0,
+        #DCE3E9 55%,
+        #AABACB
+    );
+
+    border: 1px solid rgba(77, 96, 119, 0.2);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(47, 61, 79, 0.1);
+}
+
+.cover h1 {
+    margin: 0;
+    font-family: "Unkempt", cursive;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.15;
+    color: #303D4D;
+    text-shadow: 2px 3px 0 rgba(255, 255, 255, 0.35);
+}
+
+.cover p {
+    max-width: 600px;
+    margin: 18px 0 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* ---------- SECTION HEADINGS ---------- */
+
+.sect {
+    margin: 40px 0 20px;
+    text-align: center;
+    font-family: "Unkempt", cursive;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    color: #35465A;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+/* ---------- INTRODUCTION ---------- */
+
+#introduction {
+    padding: 28px;
+    margin: 25px 0 40px;
+
+    background: linear-gradient(
+        135deg,
+        #C5D3DF,
+        #DDE3E8,
+        #B8C7D5
+    );
+
+    border: 1px solid rgba(77, 96, 119, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(47, 61, 79, 0.08);
+
+    line-height: 1.9;
+}
+
+#introduction h2 {
+    margin-top: 0;
+    font-family: "Unkempt", cursive;
+    color: #35465A;
+}
+
+/* ---------- POEM BOXES ---------- */
+
+.poem-box {
+    margin: 16px 0;
+    overflow: hidden;
+
+    border: 1px solid rgba(48, 57, 69, 0.12);
+    border-radius: 13px;
+
+    box-shadow: 0 4px 12px var(--box-shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.poem-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(42, 52, 67, 0.2);
+    border-color: rgba(48, 57, 69, 0.25);
+}
+
+/* ---------- INDIVIDUAL POEM COLOURS ---------- */
+
+/* 1. The Lonely Introvert — quiet beginning */
+
+.poem-box-1 {
+    background: #E8EDF1;
+}
+
+/* 2. The Bed Of Roses — pleasant on the surface */
+
+.poem-box-2 {
+    background: #DCE5EC;
+}
+
+/* 3. Hail — cold and sharp */
+
+.poem-box-3 {
+    background: #CCD9E5;
+}
+
+/* 4. Extroversion — words stuck inside */
+
+.poem-box-4 {
+    background: #C1D0DE;
+}
+
+/* 5. Friendly — loneliness settling in */
+
+.poem-box-5 {
+    background: #B7C7D6;
+}
+
+/* 6. All the Moves — recognition without connection */
+
+.poem-box-6 {
+    background: #ADBFCF;
+}
+
+/* 7. Very Much Here — present, but unheard */
+
+.poem-box-7 {
+    background: #A1B3C4;
+}
+
+/* 8. Oh. Ugh. — irritation and exhaustion */
+
+.poem-box-8 {
+    background: #96A8BA;
+}
+
+/* 9. .U. — neutral expression, misunderstood */
+
+.poem-box-9 {
+    background: #899DB0;
+}
+
+/* 10. Ropes & Knots — pulled toward the past */
+
+.poem-box-10 {
+    background: #7D92A7;
+}
+
+/* 11. Independent — left behind */
+
+.poem-box-11 {
+    background: #71869B;
+}
+
+/* 12. The Friendlier — a friendship fading away */
+
+.poem-box-12 {
+    background: #65798E;
+    color: #F5F6F8;
+}
+
+/* 13. Every Word, Each Friend — bittersweet ending */
+
+.poem-box-13 {
+    background: #566A7F;
+    color: #F5F6F8;
+}
+
+/* Light text for the final two poems */
+
+.poem-box-12 label,
+.poem-box-13 label,
+.poem-box-12 .poem-content,
+.poem-box-13 .poem-content {
+    color: #F5F6F8;
+}
+
+/* ---------- CLICKABLE POEM TITLES ---------- */
+
+.poem-box label {
+    display: block;
+    padding: 19px 22px;
+
+    font-family: "Unkempt", cursive;
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    color: #303945;
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+        background-color 0.2s ease,
+        letter-spacing 0.2s ease;
+}
+
+.poem-box label:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    letter-spacing: 0.5px;
+}
+
+/* ---------- HIDDEN CHECKBOX ---------- */
+
+.poem-box input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Keyboard users can still see which title is focused */
+
+.poem-box label:focus-within {
+    outline: 2px solid #35465A;
+    outline-offset: -3px;
+}
+
+/* ---------- EXPANDABLE POEM CONTENT ---------- */
+
+.poem-content {
+    display: none;
+    padding: 0 22px 24px;
+
+    line-height: 1.9;
+    white-space: pre-line;
+
+    animation: poem-reveal 0.3s ease;
+}
+
+/* This matches checkbox-based expandable poem cards */
+
+.poem-box input[type="checkbox"]:checked ~ .poem-content {
+    display: block;
+}
+
+@keyframes poem-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- MAIN POEM TEXT ---------- */
+
+.main-content {
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+/* ---------- THE .U. INTERACTION ---------- */
+
+.u-face {
+    display: block;
+    margin: 35px auto 12px;
+    padding: 14px 28px;
+
+    font-family: "Architects Daughter", cursive;
+    font-size: 2.5rem;
+    color: #35465A;
+
+    background: #E8EDF1;
+    border: 2px solid #8A9FB5;
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.u-face:hover {
+    transform: scale(1.05);
+    background: #F1F4F7;
+}
+
+.u-face:focus-visible {
+    outline: 3px solid #35465A;
+    outline-offset: 4px;
+}
+
+.u-message {
+    text-align: center;
+    line-height: 1.8;
+    color: #35465A;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    margin-top: 55px;
+    padding: 25px 10px;
+    text-align: center;
+    color: #536477;
+    font-size: 0.9rem;
+}
+
+/* ---------- MOBILE LAYOUT ---------- */
+
+@media (max-width: 600px) {
+    .content {
+        width: min(100% - 20px, 1000px);
+        padding-top: 20px;
+    }
+
+    .cover {
+        min-height: 240px;
+        padding: 35px 18px;
+        margin-top: 15px;
+    }
+
+    #introduction {
+        padding: 20px;
+    }
+
+    .poem-box label {
+        padding: 16px;
+        font-size: 1.1rem;
+    }
+
+    .poem-content {
+        padding: 0 16px 20px;
+    }
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
