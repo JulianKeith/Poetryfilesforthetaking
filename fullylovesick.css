@@ -255,3 +255,74 @@ section {
 .first {
     width: 100%;
 }
+
+
+/* FLOATING HEART BACKGROUND */
+
+.heart-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep the website content above the hearts */
+
+/* Keep floating hearts behind the page content */
+.heart-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Keep the navbar and poems above the hearts */
+nav.first,
+.poem-box,
+.main-content,
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Individual floating hearts */
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    left: var(--left);
+    font-size: var(--size);
+    color: var(--heart-color);
+    opacity: 0;
+    animation: floatHeart var(--duration) linear var(--delay) infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: translate(var(--drift), -55vh) rotate(25deg);
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.35;
+    }
+
+    100% {
+        transform: translate(calc(var(--drift) * -0.5), -115vh)
+                   rotate(var(--spin));
+        opacity: 0;
+    }
+}
