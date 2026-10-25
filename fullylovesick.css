@@ -326,3 +326,8 @@ nav.first,
         opacity: 0;
     }
 }
+
+.first {
+    width: 143%;
+    right: 204px;
+}
