@@ -454,3 +454,13 @@ footer {
 .first a:hover {
     color: #E4C878;
 }
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: auto !important;
+}
