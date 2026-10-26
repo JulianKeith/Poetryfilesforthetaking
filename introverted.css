@@ -405,14 +405,13 @@ footer {
 
 .logo {
     display: block;
+    width: clamp(35px, 6vw, 60px);
+    height: clamp(35px, 6vw, 60px);
     flex: 0 1 60px;
-    width: 60px;
     min-width: 0;
-    height: auto;
-    max-width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 50%;
-    margin-right: auto;
+    margin-right: 0;
 }
 
 
