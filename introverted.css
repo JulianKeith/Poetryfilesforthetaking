@@ -457,7 +457,6 @@ footer {
 
 .logo {
     display: block;
-    flex-shrink: 0;
     width: 60px;
     height: 60px;
     object-fit: cover;
