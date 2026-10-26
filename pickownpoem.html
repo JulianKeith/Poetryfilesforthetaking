@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Verse Poetry Engine</title>
+    <style>
+        :root {
+            --bg-color: #121214;
+            --text-color: #e2e8f0;
+            --accent-color: #94a3b8;
+            --button-bg: #1e1e24;
+            --button-hover: #2d2d39;
+        }
+
+        body {
+            font-family: 'Unkepmt' cursive;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #18181c;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border: 1px solid #27272a;
+        }
+
+        h1, h2 {
+            font-weight: normal;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        /* Choice Game Buttons */
+        .choice-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 1px solid #3f3f46;
+            padding: 15px;
+            margin: 12px 0;
+            text-align: left;
+            font-size: 16px;
+            font-family: inherit;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .choice-btn:hover {
+            background-color: var(--button-hover);
+            border-color: var(--accent-color);
+            padding-left: 20px;
+        }
+
+        /* Writing Workspace Layout */
+        .workspace {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            background: #09090b;
+            color: #fff;
+            border: 1px solid #3f3f46;
+            padding: 15px;
+            font-family: inherit;
+            font-size: 16px;
+            line-height: 1.6;
+            resize: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .word-bank {
+            background: #202026;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px dashed #52525b;
+        }
+
+        .word-tag {
+            display: inline-block;
+            background: #2d2d39;
+            padding: 4px 10px;
+            margin: 4px;
+            font-size: 14px;
+            border-radius: 3px;
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- SCREEN 1: THE CHOICE GAME -->
+    <div id="game-screen" class="screen active">
+        <h2 id="question-text">Loading prompt...</h2>
+        <div id="choices-container"></div>
+    </div>
+
+    <!-- SCREEN 2: THE WRITING CANVAS -->
+    <div id="canvas-screen" class="screen">
+        <h1>Your Free Verse Workspace</h1>
+        
+        <div class="workspace">
+            <div class="word-bank">
+                <strong>💡 Inspired Palette:</strong>
+                <p>Incorporate these textures into your lines:</p>
+                <div id="palette-container"></div>
+            </div>
+
+            <div>
+                <p id="prompt-reminder" style="color: #a1a1aa; font-style: italic;"></p>
+                <textarea placeholder="Begin spilling your words here... (No rules, no rhyme constraints)"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1. DATA: The narrative tree mapping out the choices
+    const gameData = {
+        "start": {
+            question: "Where is this poem breathing?",
+            choices: [
+                { text: "Under concrete, neon, and heavy city rain.", next: "city" },
+                { text: "Inside a forgotten, silent forest greenhouse.", next: "nature" }
+            ]
+        },
+        "city": {
+            question: "What breaks the midnight quiet?",
+            choices: [
+                { text: "The persistent, static hum of a neon sign.", keywords: ["neon", "flicker", "buzz", "asphalt", "shatter", "electric"], summary: "A city landscape hummed down by electricity." },
+                { text: "A distant, wailing siren passing blocks away.", keywords: ["wail", "echo", "midnight", "velocity", "streak", "iron"], summary: "A restless city corner bleeding sound." }
+            ]
+        },
+        "nature": {
+            question: "What crawls across the floor?",
+            choices: [
+                { text: "A slow, deliberate lattice of choking ivy.", keywords: ["entwined", "moss", "suffocate", "emerald", "decay", "patience"], summary: "An overgrown glasshouse where nature takes over." },
+                { text: "Thin, pale beams of fractured winter sunlight.", keywords: ["brittle", "dust", "glass", "gilded", "shaft", "cold"], summary: "A cold, quiet sanctuary trapped in glass." }
+            ]
+        }
+    };
+
+    // 2. STATE: Keeping track of the user's progress
+    let currentStep = "start";
+    let gatheredKeywords = [];
+    let chosenSummary = "";
+
+    // 3. ENGINE: Functions handling game progression
+    function renderStep() {
+        const step = gameData[currentStep];
+        
+        // Update the question text
+        document.getElementById("question-text").innerText = step.question;
+        
+        // Clear old buttons
+        const container = document.getElementById("choices-container");
+        container.innerHTML = "";
+
+        // Build new option buttons
+        step.choices.forEach(choice => {
+            const button = document.createElement("button");
+            button.className = "choice-btn";
+            button.innerText = choice.text;
+            
+            button.onclick = () => {
+                if (choice.next) {
+                    // Move deeper into the tree structure
+                    currentStep = choice.next;
+                    renderStep();
+                } else {
+                    // Reached a leaf node/end configuration
+                    gatheredKeywords = choice.keywords;
+                    chosenSummary = choice.summary;
+                    switchToCanvas();
+                }
+            };
+            container.appendChild(button);
+        });
+    }
+
+    function switchToCanvas() {
+        // Hide game screen, reveal canvas screen
+        document.getElementById("game-screen").classList.remove("active");
+        document.getElementById("canvas-screen").classList.add("active");
+
+        // Display context reminder
+        document.getElementById("prompt-reminder").innerText = `Setting: ${chosenSummary}`;
+
+        // Populate word palette tags
+        const palette = document.getElementById("palette-container");
+        gatheredKeywords.forEach(word => {
+            const span = document.createElement("span");
+            span.className = "word-tag";
+            span.innerText = word;
+            palette.appendChild(span);
+        });
+    }
+
+    // Initialize the application on launch
+    renderStep();
+</script>
+
+</body>
+</html>
