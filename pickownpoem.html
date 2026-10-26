@@ -1,11 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Free Verse Poetry Engine</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
     <style>
+        /* =========================
+           GLOBAL STYLES
+        ========================= */
+
         :root {
             --bg-color: #121214;
             --text-color: #e2e8f0;
@@ -14,90 +25,128 @@
             --button-hover: #2d2d39;
         }
 
-        .first {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    gap: 20px;
-    justify-content: right;
-    width: 100%;
-    min-height: 70px;
-    padding: 15px 25px;   /* FIX: Slightly more internal breathing room */ 
-    margin-bottom: 25px;
-    box-sizing: border-box;
+        * {
+            box-sizing: border-box;
+        }
 
-    background: linear-gradient(
-        110deg,
-        #252436 0%,
-        #292B46 55%,
-        #354C78 100%
-    );
+        html {
+            scroll-behavior: smooth;
+        }
 
-    border-radius: 16px;
-    transition: background-color 0.8s ease, background 0.8s ease;
-}
-
-.first ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    list-style: none;
-    gap: 20px;
-
-    margin: 0 0 0 auto !important; /* FIX: Removed top margin so links stay vertically centered */
-    padding: 0;
-}
-
-
-.first a {
-    display: inline-block;
-    text-decoration: none;
-    font-family: 'Unkempt', cursive;
-    font-size: 18px;
-    color: #F0E6D2;
-    transition: color 0.3s ease;
-}
-
-.first a:hover {
-    color: #E4C878;
-}
-
-.logo {
-  display: block;
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-right: auto !important;
-}
         body {
-            font-family: 'Unkepmt', cursive;
+            font-family: 'Unkempt', cursive;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 20px 20px 40px;
             min-height: 100vh;
-            padding: 20px;
         }
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        .first {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            width: 100%;
+            min-height: 80px;
+            padding: 10px 25px;
+            margin: 0 auto 30px;
+
+            background: linear-gradient(
+                110deg,
+                #252436 0%,
+                #292B46 55%,
+                #354C78 100%
+            );
+
+            border-radius: 16px;
+            box-sizing: border-box;
+
+            transition: background 0.8s ease;
+        }
+
+        .logo {
+            display: block;
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .first ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px 20px;
+
+            list-style: none;
+            margin: 0 0 0 auto;
+            padding: 0;
+        }
+
+        .first a {
+            display: inline-block;
+            color: #F0E6D2;
+            font-family: 'Unkempt', cursive;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .first a:hover,
+        .first a:focus-visible {
+            color: #E4C878;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
 
         .container {
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
+            margin: 0 auto;
+
             background: #18181c;
             padding: 40px;
+
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             border: 1px solid #27272a;
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             font-weight: normal;
             color: #fff;
+            margin-top: 0;
             margin-bottom: 25px;
         }
+
+        h1 {
+            font-size: clamp(26px, 5vw, 36px);
+        }
+
+        h2 {
+            font-size: clamp(23px, 4vw, 30px);
+            line-height: 1.4;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* =========================
+           SCREENS
+        ========================= */
 
         .screen {
             display: none;
@@ -105,23 +154,49 @@
 
         .screen.active {
             display: block;
+            animation: fade-in 0.4s ease;
         }
 
-        /* Choice Game Buttons */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           CHOICE GAME BUTTONS
+        ========================= */
+
         .choice-btn {
             display: block;
             width: 100%;
+
             background-color: var(--button-bg);
             color: var(--text-color);
+
             border: 1px solid #3f3f46;
+            border-radius: 4px;
+
             padding: 15px;
             margin: 12px 0;
+
             text-align: left;
-            font-size: 16px;
             font-family: 'Unkempt', cursive;
+            font-size: 17px;
+            line-height: 1.5;
+
             cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.2s ease;
+
+            transition:
+                background-color 0.2s ease,
+                border-color 0.2s ease,
+                padding-left 0.2s ease;
         }
 
         .choice-btn:hover {
@@ -130,7 +205,16 @@
             padding-left: 20px;
         }
 
-        /* Writing Workspace Layout */
+        .choice-btn:focus-visible,
+        .restart-btn:focus-visible {
+            outline: 2px solid #E4C878;
+            outline-offset: 3px;
+        }
+
+        /* =========================
+           WRITING WORKSPACE
+        ========================= */
+
         .workspace {
             display: grid;
             grid-template-columns: 1fr;
@@ -138,18 +222,23 @@
         }
 
         textarea {
+            display: block;
             width: 100%;
-            height: 250px;
+            min-height: 300px;
+
             background: #09090b;
             color: #fff;
+
             border: 1px solid #3f3f46;
-            padding: 15px;
-            font-family: 'Unkempt', cursive;
-            font-size: 16px;
-            line-height: 1.6;
-            resize: none;
             border-radius: 4px;
-            box-sizing: border-box;
+
+            padding: 15px;
+
+            font-family: 'Unkempt', cursive;
+            font-size: 17px;
+            line-height: 1.7;
+
+            resize: vertical;
         }
 
         textarea:focus {
@@ -157,31 +246,147 @@
             border-color: var(--accent-color);
         }
 
+        textarea::placeholder {
+            color: #71717a;
+        }
+
+        /* =========================
+           WORD BANK
+        ========================= */
+
         .word-bank {
             background: #202026;
-            padding: 15px;
+            padding: 18px;
+
             border-radius: 4px;
             border: 1px dashed #52525b;
         }
 
+        .word-bank strong {
+            color: #E4C878;
+            font-size: 18px;
+        }
+
+        .word-bank p {
+            margin: 8px 0;
+        }
+
+        #palette-container {
+            margin-top: 12px;
+        }
+
         .word-tag {
             display: inline-block;
+
             background: #2d2d39;
-            padding: 4px 10px;
-            margin: 4px;
-            font-size: 14px;
-            border-radius: 3px;
             color: #cbd5e1;
+
+            padding: 5px 10px;
+            margin: 4px;
+
+            font-size: 15px;
+            border-radius: 3px;
+        }
+
+        #prompt-reminder {
+            color: #a1a1aa;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        /* =========================
+           RESTART BUTTON
+        ========================= */
+
+        .restart-btn {
+            display: inline-block;
+
+            background: transparent;
+            color: #E4C878;
+
+            border: 1px solid #52525b;
+            border-radius: 4px;
+
+            padding: 10px 16px;
+            margin-top: 20px;
+
+            font-family: 'Unkempt', cursive;
+            font-size: 16px;
+
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .restart-btn:hover {
+            background-color: #2d2d39;
+        }
+
+        /* =========================
+           MOBILE LAYOUT
+        ========================= */
+
+        @media (max-width: 650px) {
+            body {
+                padding: 12px 12px 30px;
+            }
+
+            .first {
+                flex-direction: column;
+                justify-content: center;
+                padding: 15px;
+                gap: 12px;
+            }
+
+            .logo {
+                margin: 0;
+            }
+
+            .first ul {
+                justify-content: center;
+                gap: 10px 16px;
+                margin: 0;
+            }
+
+            .first a {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 24px 18px;
+            }
+
+            textarea {
+                min-height: 250px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
+
 <body>
- <nav class="first">
-        <img
-            src="https://github.com/JulianKeith/Poetryfilesforthetaking/blob/main/Screenshot%202026-10-15%2007.39.04.png?raw=true"
-            alt="Logo"
-            class="logo"
-        >
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================= -->
+
+    <nav class="first" aria-label="Main navigation">
+
+        <a href="index.html" aria-label="Home">
+            <img
+                src="https://github.com/JulianKeith/Poetryfilesforthetaking/blob/main/Screenshot%202026-10-15%2007.39.04.png?raw=true"
+                alt="Poetry website logo"
+                class="logo"
+            >
+        </a>
 
         <ul>
             <li><a href="index.html">Introduction</a></li>
@@ -190,136 +395,417 @@
             <li><a href="inspirations.html">Inspirations</a></li>
             <li><a href="majorchapbooks.html">Major Chapbooks</a></li>
         </ul>
+
     </nav>
 
-<div class="container">
-    <!-- SCREEN 1: THE CHOICE GAME -->
-    <div id="game-screen" class="screen active">
-        <h2 id="question-text">Loading prompt...</h2>
-        <div id="choices-container"></div>
-    </div>
+    <!-- =========================
+         MAIN APPLICATION
+    ========================= -->
 
-    <!-- SCREEN 2: THE WRITING CANVAS -->
-    <div id="canvas-screen" class="screen">
-        <h1>Your Free Verse Workspace</h1>
-        
-        <div class="workspace">
-            <div class="word-bank">
-                <strong>💡 Inspired Palette:</strong>
-                <p>Incorporate these textures into your lines:</p>
-                <p>Don't like it? Click the reload button to restart.</p>
-                <div id="palette-container"></div>
+    <main class="container">
+
+        <!-- SCREEN 1: CHOICE GAME -->
+
+        <section id="game-screen" class="screen active">
+
+            <h2 id="question-text" aria-live="polite">
+                Loading prompt...
+            </h2>
+
+            <div id="choices-container"></div>
+
+        </section>
+
+        <!-- SCREEN 2: WRITING WORKSPACE -->
+
+        <section id="canvas-screen" class="screen">
+
+            <h1>Your Free Verse Workspace</h1>
+
+            <div class="workspace">
+
+                <div class="word-bank">
+
+                    <strong>Inspired Palette</strong>
+
+                    <p>
+                        Incorporate these textures into your lines.
+                    </p>
+
+                    <p>
+                        Don't like your choices? Restart to explore
+                        another setting.
+                    </p>
+
+                    <div
+                        id="palette-container"
+                        aria-label="Suggested words"
+                    ></div>
+
+                </div>
+
+                <div>
+
+                    <p id="prompt-reminder"></p>
+
+                    <label for="poem-text">
+                        Your poem
+                    </label>
+
+                    <textarea
+                        id="poem-text"
+                        placeholder="Begin spilling your words here... No rules, no rhyme constraints."
+                        spellcheck="true"
+                    ></textarea>
+
+                </div>
+
             </div>
 
-            <div>
-                <p id="prompt-reminder" style="color: #a1a1aa; font-style: italic;"></p>
-                <textarea placeholder="Begin spilling your words here... (No rules, no rhyme constraints)"></textarea>
-            </div>
-        </div>
-    </div>
-</div>
+            <button
+                type="button"
+                class="restart-btn"
+                id="restart-btn"
+            >
+                ↻ Restart and choose again
+            </button>
 
-<script>
-    // 1. DATA: The narrative tree mapping out the choices
-    const gameData = {
-        "start": {
-            question: "Where is this poem breathing?",
-            choices: [
-                { text: "Under concrete, neon, and heavy city rain.", next: "city" },
-                { text: "Inside a forgotten, silent forest greenhouse.", next: "nature" },
-                { text: "Under a moonlit sky in the countryside.", next: "night"},
-                { text: "Under a sunlight window, blossoming like buds.", next: "day"}
-            ]
-        },
-        "city": {
-            question: "What breaks the midnight quiet?",
-            choices: [
-                { text: "The persistent, static hum of a neon sign.", keywords: ["neon", "flicker", "buzz", "asphalt", "shatter", "electric"], summary: "A city landscape hummed down by electricity." },
-                { text: "A distant, wailing siren passing blocks away.", keywords: ["wail", "echo", "midnight", "velocity", "streak", "iron"], summary: "A restless city corner bleeding sound." }
-            ]
-        },
-        "nature": {
-            question: "What crawls across the floor?",
-            choices: [
-                { text: "A slow, deliberate lattice of choking ivy.", keywords: ["entwined", "moss", "suffocate", "emerald", "decay", "patience"], summary: "An overgrown glasshouse where nature takes over." },
-                { text: "Thin, pale beams of fractured winter sunlight.", keywords: ["brittle", "dust", "glass", "gilded", "shaft", "cold"], summary: "A cold, quiet sanctuary trapped in glass." }
-            ]
-        },
-        "night": {
-            question: "What can you see gazing up?",
-            choices: [
-                { text: "A silver moon, beckoning to all with its silver light.", keywords: ["silver", "cresent", "moon", "breathtaking", "gazing", "awestruck"], summary: "A quiet night sky that holds on to peace." },
-                { text: "Stars, hundreds, millions that twinkle shyly.", keywords: ["Twinkle", "stars", "starstruck", "gazing", "silver", "breathtaking"], summary: "A cold, silent night berriden with stars." }
-            ]
-        },
-        "day": {
-            question: "What can you see looking up?",
-            choices: [
-                { text: "A bright yellow sun, smiling down.", keywords: ["bright", "yellow", "sunny", "blue", "peaceful", "awestruck"], summary: "A quiet night sky that holds on to peace." },
-                { text: "clouds, blanketing over everything like sheets.", keywords: ["sheets", "rain", "lightning", "pouring", "grey", "fog"], summary: "A cloudy day hidden and besieged by fog, rain, and lightning." }
-            ]
-        },
-    };
+        </section>
 
-    // 2. STATE: Keeping track of the user's progress
-    let currentStep = "start";
-    let gatheredKeywords = [];
-    let chosenSummary = "";
+    </main>
 
-    // 3. ENGINE: Functions handling game progression
-    function renderStep() {
-        const step = gameData[currentStep];
-        
-        // Update the question text
-        document.getElementById("question-text").innerText = step.question;
-        
-        // Clear old buttons
-        const container = document.getElementById("choices-container");
-        container.innerHTML = "";
+    <script>
+        /* =========================
+           1. GAME DATA
+        ========================= */
 
-        // Build new option buttons
-        step.choices.forEach(choice => {
-            const button = document.createElement("button");
-            button.className = "choice-btn";
-            button.innerText = choice.text;
-            
-            button.onclick = () => {
-                if (choice.next) {
-                    // Move deeper into the tree structure
-                    currentStep = choice.next;
-                    renderStep();
-                } else {
-                    // Reached a leaf node/end configuration
-                    gatheredKeywords = choice.keywords;
-                    chosenSummary = choice.summary;
-                    switchToCanvas();
-                }
-            };
-            container.appendChild(button);
-        });
-    }
+        const gameData = {
+            start: {
+                question: "Where is this poem breathing?",
 
-    function switchToCanvas() {
-        // Hide game screen, reveal canvas screen
-        document.getElementById("game-screen").classList.remove("active");
-        document.getElementById("canvas-screen").classList.add("active");
+                choices: [
+                    {
+                        text: "Under concrete, neon, and heavy city rain.",
+                        next: "city"
+                    },
+                    {
+                        text: "Inside a forgotten, silent forest greenhouse.",
+                        next: "nature"
+                    },
+                    {
+                        text: "Under a moonlit sky in the countryside.",
+                        next: "night"
+                    },
+                    {
+                        text: "Beside a sunlit window, blossoming like buds.",
+                        next: "day"
+                    }
+                ]
+            },
 
-        // Display context reminder
-        document.getElementById("prompt-reminder").innerText = `Setting: ${chosenSummary}`;
+            city: {
+                question: "What breaks the midnight quiet?",
 
-        // Populate word palette tags
-        const palette = document.getElementById("palette-container");
-        gatheredKeywords.forEach(word => {
-            const span = document.createElement("span");
-            span.className = "word-tag";
-            span.innerText = word;
-            palette.appendChild(span);
-        });
-    }
+                choices: [
+                    {
+                        text: "The persistent, static hum of a neon sign.",
 
-    // Initialize the application on launch
-    renderStep();
-</script>
+                        keywords: [
+                            "neon",
+                            "flicker",
+                            "buzz",
+                            "asphalt",
+                            "shatter",
+                            "electric"
+                        ],
+
+                        summary:
+                            "A city landscape humming with electricity."
+                    },
+                    {
+                        text: "A distant, wailing siren passing blocks away.",
+
+                        keywords: [
+                            "wail",
+                            "echo",
+                            "midnight",
+                            "velocity",
+                            "streak",
+                            "iron"
+                        ],
+
+                        summary:
+                            "A restless city corner bleeding sound."
+                    }
+                ]
+            },
+
+            nature: {
+                question: "What crawls across the floor?",
+
+                choices: [
+                    {
+                        text: "A slow, deliberate lattice of choking ivy.",
+
+                        keywords: [
+                            "entwined",
+                            "moss",
+                            "suffocate",
+                            "emerald",
+                            "decay",
+                            "patience"
+                        ],
+
+                        summary:
+                            "An overgrown glasshouse where nature takes over."
+                    },
+                    {
+                        text: "Thin, pale beams of fractured winter sunlight.",
+
+                        keywords: [
+                            "brittle",
+                            "dust",
+                            "glass",
+                            "gilded",
+                            "shaft",
+                            "cold"
+                        ],
+
+                        summary:
+                            "A cold, quiet sanctuary trapped in glass."
+                    }
+                ]
+            },
+
+            night: {
+                question: "What can you see gazing up?",
+
+                choices: [
+                    {
+                        text: "A silver moon, beckoning with its silver light.",
+
+                        keywords: [
+                            "silver",
+                            "crescent",
+                            "moon",
+                            "breathtaking",
+                            "gazing",
+                            "awestruck"
+                        ],
+
+                        summary:
+                            "A quiet night sky that holds on to peace."
+                    },
+                    {
+                        text: "Stars, hundreds, millions, twinkling shyly.",
+
+                        keywords: [
+                            "twinkle",
+                            "stars",
+                            "starstruck",
+                            "gazing",
+                            "silver",
+                            "breathtaking"
+                        ],
+
+                        summary:
+                            "A silent night brimming with stars."
+                    }
+                ]
+            },
+
+            day: {
+                question: "What can you see looking up?",
+
+                choices: [
+                    {
+                        text: "A bright yellow sun, smiling down.",
+
+                        keywords: [
+                            "bright",
+                            "yellow",
+                            "sunny",
+                            "blue",
+                            "peaceful",
+                            "awestruck"
+                        ],
+
+                        summary:
+                            "A sunlit day filled with warmth and peace."
+                    },
+                    {
+                        text: "Clouds, blanketing everything like sheets.",
+
+                        keywords: [
+                            "sheets",
+                            "rain",
+                            "lightning",
+                            "pouring",
+                            "grey",
+                            "fog"
+                        ],
+
+                        summary:
+                            "A cloudy day shrouded in fog, rain, and lightning."
+                    }
+                ]
+            }
+        };
+
+
+        /* =========================
+           2. APPLICATION STATE
+        ========================= */
+
+        let currentStep = "start";
+        let gatheredKeywords = [];
+        let chosenSummary = "";
+
+
+        /* =========================
+           3. RENDER CHOICES
+        ========================= */
+
+        function renderStep() {
+            const step = gameData[currentStep];
+
+            if (!step) {
+                console.error("Unknown game step:", currentStep);
+                return;
+            }
+
+            const questionText =
+                document.getElementById("question-text");
+
+            const choicesContainer =
+                document.getElementById("choices-container");
+
+            questionText.textContent = step.question;
+
+            // Remove previous choices.
+            choicesContainer.replaceChildren();
+
+            // Create the buttons for this step.
+            step.choices.forEach(choice => {
+                const button = document.createElement("button");
+
+                button.type = "button";
+                button.className = "choice-btn";
+                button.textContent = choice.text;
+
+                button.addEventListener("click", () => {
+                    if (choice.next) {
+                        // Continue through the branching game.
+                        currentStep = choice.next;
+                        renderStep();
+                    } else {
+                        // A final choice has been made.
+                        gatheredKeywords = [...choice.keywords];
+                        chosenSummary = choice.summary;
+
+                        switchToCanvas();
+                    }
+                });
+
+                choicesContainer.appendChild(button);
+            });
+        }
+
+
+        /* =========================
+           4. SHOW WRITING WORKSPACE
+        ========================= */
+
+        function switchToCanvas() {
+            document
+                .getElementById("game-screen")
+                .classList.remove("active");
+
+            document
+                .getElementById("canvas-screen")
+                .classList.add("active");
+
+            // Display the selected setting.
+            document
+                .getElementById("prompt-reminder")
+                .textContent = `Setting: ${chosenSummary}`;
+
+            // Clear any old word suggestions.
+            const palette =
+                document.getElementById("palette-container");
+
+            palette.replaceChildren();
+
+            // Add the new word suggestions.
+            gatheredKeywords.forEach(word => {
+                const span = document.createElement("span");
+
+                span.className = "word-tag";
+                span.textContent = word;
+
+                palette.appendChild(span);
+            });
+
+            // Move focus to the new screen heading.
+            document
+                .querySelector("#canvas-screen h1")
+                .focus({ preventScroll: true });
+
+            document
+                .querySelector("#canvas-screen h1")
+                .setAttribute("tabindex", "-1");
+        }
+
+
+        /* =========================
+           5. RESTART THE ENGINE
+        ========================= */
+
+        function restartGame() {
+            currentStep = "start";
+            gatheredKeywords = [];
+            chosenSummary = "";
+
+            // Clear the previous poem.
+            document.getElementById("poem-text").value = "";
+
+            // Clear the previous suggestions.
+            document
+                .getElementById("palette-container")
+                .replaceChildren();
+
+            document
+                .getElementById("prompt-reminder")
+                .textContent = "";
+
+            // Return to the first screen.
+            document
+                .getElementById("canvas-screen")
+                .classList.remove("active");
+
+            document
+                .getElementById("game-screen")
+                .classList.add("active");
+
+            renderStep();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        /* =========================
+           6. INITIALIZE APPLICATION
+        ========================= */
+
+        document
+            .getElementById("restart-btn")
+            .addEventListener("click", restartGame);
+
+        renderStep();
+    </script>
 
 </body>
 </html>
