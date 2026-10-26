@@ -178,27 +178,7 @@ section {
    POEM BOXES
 ========================================= */
 
-.poem-box {
-    width: 80%;
-    margin: 28px auto;
-    padding: 10px;
 
-    border: 1px solid rgba(48, 57, 69, 0.12);
-    border-radius: 20px;
-
-    box-shadow: 0 5px 14px rgba(42, 52, 67, 0.12);
-
-    overflow: hidden;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.poem-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 9px 20px rgba(42, 52, 67, 0.18);
-}
 
 /* Individual poem colours */
 
@@ -236,46 +216,13 @@ section {
         letter-spacing 0.2s ease;
 }
 
-.poem-box label:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    letter-spacing: 0.5px;
-}
-
 /* Hide the checkbox without removing it from keyboard navigation */
 
-.poem-box input[type="checkbox"] {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-}
 
-.poem-box input[type="checkbox"]:focus-visible + label {
-    outline: 2px solid #35465A;
-    outline-offset: -3px;
-    border-radius: 8px;
-}
 
 
 /* ---------- EXPANDABLE POEM TEXT ---------- */
 
-.poem-content {
-    display: none;
-    padding: 0 20px 24px;
-
-    font-family: "Architects Daughter", cursive;
-    font-size: 1rem;
-    line-height: 1.8;
-    white-space: pre-line;
-    color: var(--box-text);
-}
-
-/* Open the selected poem */
-
-.poem-box input[type="checkbox"]:checked ~ .poem-content {
-    display: block;
-    animation: poem-reveal 0.35s ease;
-}
 
 /* Keyboard accessibility */
 
@@ -455,11 +402,51 @@ footer {
     color: #E4C878;
 }
 
+
 .logo {
     display: block;
+    flex: 0 1 60px;
     width: 60px;
-    height: 60px;
-    object-fit: cover;
+    min-width: 0;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
     border-radius: 50%;
-    margin-right: auto !important;
+    margin-right: auto;
+}
+
+
+.poem-box {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.poem-box input {
+    display: none;
+}
+
+.poem-box label {
+    display: block;
+    padding: 20px;
+    color: #2F2925;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.poem-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    font-family: Architects Daughter;
+    transition: max-height 0.8s ease, opacity 0.5s ease;
+    white-space: pre-line;
+    line-height: 1.2;
+}
+
+.poem-box input:checked ~ .poem-content {
+    max-height: 5000px;
+    opacity: 1;
 }
