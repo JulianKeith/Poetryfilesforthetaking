@@ -116,6 +116,14 @@ body {
     opacity: 1;
 }
 
+.poems {
+  text-align: center;
+    background-color: #cebfa3;
+    color: #2F2925 !important;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
 #whatpoems {
     text-align: center;
     background-color: #cebfa3;
