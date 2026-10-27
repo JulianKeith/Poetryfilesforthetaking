@@ -511,7 +511,7 @@ Candlelight	In a dark room illuminated by a hundred candles.
                         next: "city"
                     },
                     {
-                        text: "Inside a forgotten, silent forest greenhouse.",
+                        text: "Basking in the shade of a tree",
                         next: "nature"
                     },
                     {
@@ -546,6 +546,7 @@ Candlelight	In a dark room illuminated by a hundred candles.
                     },
                     {
                         text: "A distant, wailing siren passing blocks away.",
+                        
 
                         keywords: [
                             "wail",
@@ -563,23 +564,20 @@ Candlelight	In a dark room illuminated by a hundred candles.
             },
 
             nature: {
-                question: "What crawls across the floor?",
+                question: "What colour are the leaves?",
 
                 choices: [
                     {
-                        text: "A slow, deliberate lattice of choking ivy.",
+                        text: "Blossoming pink, cherry trees that sing to all.",
+                        next: 'spring',
+                        text: "Every shade of green under the sun, dozens of dozens.",
+                        next: 'summer',
+                        text: "Orange and gold, falling like minutes in time.",
+                        next: 'fall',
+                        text: "Branches bare, brown oak that longs for leaves.",
+                        next: 'winter',
 
-                        keywords: [
-                            "entwined",
-                            "moss",
-                            "suffocate",
-                            "emerald",
-                            "decay",
-                            "patience"
-                        ],
-
-                        summary:
-                            "An overgrown glasshouse where nature takes over."
+        
                     },
                     {
                         text: "Thin, pale beams of fractured winter sunlight.",
@@ -671,7 +669,151 @@ Candlelight	In a dark room illuminated by a hundred candles.
                             "A cloudy day shrouded in fog, rain, and lightning."
                     }
                 ]
-            }
+            },
+            spring: {
+                question: "What colour is the sky?",
+
+                choices: [
+                    {
+                        text: "A sky of blue, with flowers of pink barely visible.",
+
+                        keywords: [
+                            "cherry blossom",
+                            "pink",
+                            "sunny",
+                            "flower",
+                            "blue",
+                            "day"
+                        ],
+
+                        summary:
+                            "A spring day, life blossoming like buds."
+                    },
+                    {
+                        text: "Rain, pouring in sheets, and sheets, and sheets.",
+
+                        keywords: [
+                            "sheets",
+                            "rain",
+                            "lightning",
+                            "pouring",
+                            "grey",
+                            "fog"
+                        ],
+
+                        summary:
+                            "A spring day shrouded in fog, rain, and lightning."
+                    }
+                ]
+            },
+            summer: {
+                question: "How hot do you feel?",
+
+                choices: [
+                    {
+                        text: "A mild swat drops runs across my back, but a spoonful of ice cream soothes me.",
+
+                        keywords: [
+                            "beach",
+                            "ice cream",
+                            "sunny",
+                            "blue",
+                            "peaceful",
+                            "sweat"
+                        ],
+
+                        summary:
+                            "A summer beach day filled with warmth and peace."
+                    },
+                    {
+                        text: "Overheating in the desert, with no water in sight..",
+
+                        keywords: [
+                            "desert",
+                            "sand",
+                            "sun",
+                            "hot",
+                            "barren",
+                            "throat"
+                        ],
+
+                        summary:
+                            "A desert, the day spent asking for help and for water."
+                    }
+                ]
+            },
+            fall: {
+                question: "How fast do the leaves fall?",
+
+                choices: [
+                    {
+                        text: "Too fast to catch up with.",
+
+                        keywords: [
+                            "nostalgia",
+                            "longing",
+                            "gold",
+                            "orange",
+                            "distance",
+                            "time"
+                        ],
+
+                        summary:
+                            "An autumn day that makes you think of better times."
+                    },
+                    {
+                        text: "Slow, it takes its time to fall, gliding in the air.",
+
+                        keywords: [
+                            "leaves",
+                            "orange",
+                            "content",
+                            "gold",
+                            "present",
+                            "tree"
+                        ],
+
+                        summary:
+                            "An autumn day which makes you content by watching the leaves."
+                    }
+                ]
+            },
+            winter: {
+                question: "What is the weather like today?",
+
+                choices: [
+                    {
+                        text: "A drifting snowflake catches the corner of your eye.",
+
+                        keywords: [
+                            "calm",
+                            "icy",
+                            "snow",
+                            "blue",
+                            "icicle",
+                            "snowflake"
+                        ],
+
+                        summary:
+                            "A rare snow day that beckons peace."
+                    },
+                    {
+                        text: "A blizzard, icy white snow with no hope of getting out.",
+
+                        keywords: [
+                            "bleak",
+                            "sleet",
+                            "snow",
+                            "pouring",
+                            "rain",
+                            "white"
+                        ],
+
+                        summary:
+                            "A terrifying winter day."
+                    }
+                ]
+            },
         };
 
 
