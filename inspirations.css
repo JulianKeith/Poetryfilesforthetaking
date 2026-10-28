@@ -910,16 +910,18 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    text-decoration: none;
+    text-decoration: none !important;
     color: inherit;
 }
 
 .inspiration-link h2 {
     color: #292B46;
+    text-decoration: none;
 }
 
 .inspiration-link p {
     color: #2F2925;
+    text-decoration: none;
 }
 
 .inspiration-link .card-footer {
@@ -929,4 +931,8 @@ body {
 .inspiration-link:focus-visible {
     outline: 3px solid #354C78;
     outline-offset: 4px;
+}
+
+.inspiration-link:hover {
+    text-decoration: none;
 }
