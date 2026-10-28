@@ -817,3 +817,43 @@ h3,
 .poem-content {
     font-family: 'Architects Daughter', cursive;
 }
+
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.first {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.first a.selected {
+  color: #E4C878;
+  font-weight: bold;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.intro-a {
+    text-decoration: none;
+    color: #534f45; /* Matches your label color */
+    font-size: 30px; /* Matches your label font size */
+    transition: color 0.3s ease;
+}
+
+.intro-a:hover {
+    color: #1a1715; /* Shifts darker on hover */
+}
