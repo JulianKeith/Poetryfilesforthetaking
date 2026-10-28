@@ -904,3 +904,29 @@ body {
 .archive-footer {
     color: #354C78;
 }
+
+
+.inspiration-link {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.inspiration-link h2 {
+    color: #292B46;
+}
+
+.inspiration-link p {
+    color: #2F2925;
+}
+
+.inspiration-link .card-footer {
+    margin-top: auto;
+}
+
+.inspiration-link:focus-visible {
+    outline: 3px solid #354C78;
+    outline-offset: 4px;
+}
