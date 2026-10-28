@@ -729,111 +729,79 @@ body {
 }
 
 
-/* Interactive background */
+/* =========================================   THOSE WHO PASS BY
+   Atmospheric memory background
+   ========================================= */
+
+/* Main page */
 body {
-    background: #0d1522;
-    color: #f2eee5;
+    margin: 0;
+    min-height: 100vh;
     position: relative;
     isolation: isolate;
+
+    background: #0d1522;
+    color: #f2eee5;
+
+    font-family: 'Architects Daughter', cursive;
 }
 
-/* Keep the background behind the entire page */
+/* =========================================
+   BACKGROUND LAYERS
+   ========================================= */
+
 .memory-background {
     position: fixed;
     inset: 0;
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    background:
-        radial-gradient(
-            ellipse at 15% 20%,
-            rgba(53, 91, 139, 0.22),
-            transparent 55%
-        ),
-        radial-gradient(
-            ellipse at 85% 80%,
-            rgba(170, 117, 67, 0.13),
-            transparent 50%
-        ),
-        #0d1522;
+    background: #0d1522;
 }
 
+/* Floating particle canvas */
 #memory-canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.ambient-glow {
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-        circle 180px at var(--mouse-x, 50%)
-        var(--mouse-y, 40%),
-        rgba(126, 165, 218, 0.12),
-        transparent 100%
-    );
-    opacity: 0.8;
-    transition: opacity 0.4s ease;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0.75;
 }
 
-body:has(.poem-box input:checked)
-.memory-background .ambient-glow {
-    opacity: 1;
+/* Soft ambient light */
+.ambient-glow {
+    position: absolute;
+    inset: -20%;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 25%,
+            rgba(69, 100, 153, 0.16),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 80% 70%,
+            rgba(184, 112, 93, 0.12),
+            transparent 45%
+        );
+
+    animation: glow-drift 18s ease-in-out infinite alternate;
 }
 
-/* Keep your navigation above the background */
-nav.first,
-main.content {
-    position: relative;
-}
-
-/* Make poem panels readable */
-.poem-box {
-    position: relative;
-    background: rgba(20, 30, 46, 0.88);
-    border: 1px solid rgba(200, 215, 235, 0.16);
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-    transition:
-        border-color 0.3s ease,
-        transform 0.3s ease,
-        background 0.3s ease;
-}
-
-.poem-box:hover {
-    border-color: rgba(204, 180, 128, 0.65);
-    transform: translateY(-2px);
-}
-
-.poem-box label {
-    cursor: pointer;
-}
-
-/* Respect reduced-motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-
-/* The expanding memory layer */
+/* Colour that spreads from the selected poem */
 .memory-wash {
     position: absolute;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
-    z-index: 0;
+
     --memory-color: 90, 130, 210;
     --origin-x: 50%;
     --origin-y: 50%;
 }
 
+/* The spreading colour */
 .memory-wash::before {
     content: "";
     position: absolute;
@@ -851,17 +819,18 @@ main.content {
         0vmax at var(--origin-x) var(--origin-y)
     );
 
-    transition: clip-path 1.3s
-        cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition:
+        clip-path 1.3s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+/* Expand when a poem is selected */
 .memory-wash.awake::before {
     clip-path: circle(
         150vmax at var(--origin-x) var(--origin-y)
     );
 }
 
-/* Colour associated with each poem */
+/* Colour themes */
 .memory-wash.blue-memory {
     --memory-color: 83, 133, 219;
 }
@@ -882,9 +851,86 @@ main.content {
     --memory-color: 225, 190, 104;
 }
 
-/* Keep the page content above the effect */
-nav.first,
-main.content {
+/* Gentle background movement */
+@keyframes glow-drift {
+    from {
+        transform: translate3d(-1%, -1%, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(1%, 1%, 0) scale(1.08);
+    }
+}
+
+/* =========================================
+   PAGE CONTENT
+   Keep the page above the background
+   ========================================= */
+
+body > :not(.memory-background) {
     position: relative;
-    z-index: 10;
+    z-index: 1;
+}
+
+/* Navigation */
+nav {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   POEM BOXES
+   ========================================= */
+
+.poem-box {
+    position: relative;
+    z-index: 1;
+
+    background: rgba(20, 30, 46, 0.88);
+    color: #f2eee5;
+
+    border: 1px solid rgba(230, 222, 205, 0.18);
+    border-radius: 12px;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+/* Warm-themed poem boxes */
+.poem-box.orange {
+    background-color: #E58D55;
+    color: #241b18;
+}
+
+/* Blue-themed poem boxes */
+.poem-box.blue {
+    background-color: #354C78;
+    color: #f2eee5;
+}
+
+/* Hover effect */
+.poem-box:hover {
+    border-color: rgba(242, 238, 229, 0.45);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .ambient-glow {
+        animation: none;
+    }
+
+    .memory-wash::before,
+    .poem-box {
+        transition: none;
+    }
 }
