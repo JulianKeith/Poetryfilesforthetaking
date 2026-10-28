@@ -790,7 +790,6 @@ body {
     box-shadow 0.25s ease,
     background 0.25s ease;
 }
-
 .card-number {
   font-size: 11px;
   letter-spacing: 1.5px;
@@ -858,4 +857,50 @@ body {
   .inspiration-card {
     min-height: 170px;
   }
+}
+
+
+/* INSPIRATIONS — MATCH THE EXISTING WEBSITE */
+
+.inspirations {
+    color: #2F2925;
+}
+
+.inspirations-heading {
+    background: #cebfa3;
+}
+
+.inspirations-heading h1 {
+    font-family: 'Unkempt', cursive;
+    color: #252436;
+}
+
+.inspiration-card {
+    background: #E8DDC8;
+    border: 1px solid #cebfa3;
+    border-top: 3px solid #354C78;
+    border-radius: 16px;
+}
+
+.inspiration-card h2 {
+    font-family: 'Unkempt', cursive;
+    color: #292B46;
+}
+
+.inspiration-card p {
+    color: #2F2925;
+}
+
+.inspiration-card:hover {
+    background: #F0E6D2;
+    border-top-color: #E4C878;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(37, 36, 54, 0.12);
+}
+
+.section-label,
+.card-number,
+.card-footer,
+.archive-footer {
+    color: #354C78;
 }
