@@ -515,16 +515,31 @@ Candlelight	In a dark room illuminated by a hundred candles.
                         next: "nature"
                     },
                     {
-                        text: "Under a moonlit sky in the countryside.",
-                        next: "night"
-                    },
-                    {
-                        text: "Beside a sunlit window, blossoming like buds.",
-                        next: "day"
+                        text: "Unbeknownst to all, floating in the space of time and hours.",
+                        next: "time"
                     }
                 ]
             },
+            time: {
+                question: "What time is it?",
 
+                choices: [
+                    { 
+                        text: "Dawn, orange sky and clouds peeking from the horizon.",
+                        next: "dawn",
+                    },
+                    {   text: "Daytime, the blue sky and yellow sun smiling down to us all.",
+                        next: 'day',
+                    },
+
+                    { text: 'Dusk, the orange sky barely visible as the black night sets in.',
+                      next: 'dusk'
+                    },
+                    { text: 'Night, the velvet sky embraces the word, its black starry cloak suffocating.',
+                      next: 'night'
+                    },               
+                ]
+            },
             city: {
                 question: "What breaks the midnight quiet?",
 
