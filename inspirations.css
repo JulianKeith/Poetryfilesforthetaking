@@ -936,3 +936,10 @@ body {
 .inspiration-link:hover {
     text-decoration: none;
 }
+
+.inspiration-link,
+.inspiration-link:hover,
+.inspiration-link:visited,
+.inspiration-link:active {
+    text-decoration: none !important;
+}
