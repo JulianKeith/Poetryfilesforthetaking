@@ -727,3 +727,135 @@ body {
 .poem-content {
     font-family: 'Architects Daughter', cursive;
 }
+
+
+/* INSPIRATIONS SECTION */
+
+.inspirations {
+  width:  min(900px, 88%);
+  margin: 35px auto 60px;
+  color: #292A3E;
+}
+
+/* Heading panel */
+
+.inspirations-heading {
+  background: #D0C0A3;
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #596181;
+}
+
+.inspirations-heading h1 {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 14px 0;
+}
+
+.inspirations-heading p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 580px;
+}
+
+/* Card layout */
+
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.inspiration-card {
+  background: #F2E9D8;
+  border: 1px solid #C8B99E;
+  border-radius: 16px;
+  padding: 24px 20px;
+  min-height: 205px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.card-number {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #596181;
+}
+
+.inspiration-card h2 {
+  font-size: 22px;
+  font-weight: normal;
+  margin: 22px 0 10px;
+}
+
+.inspiration-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #514A43;
+  margin: 0 0 24px;
+}
+
+.card-footer {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #596181;
+  margin-top: auto;
+}
+
+/* Hover effect */
+
+.inspiration-card:hover {
+  transform: translateY(-5px);
+  background: #E8DCC6;
+  box-shadow: 0 8px 20px #292A3E12;
+}
+
+/* Bottom label */
+
+.archive-footer {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #596181;
+  margin-top: 28px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 650px) {
+  .inspirations {
+    width: 90%;
+  }
+
+  .inspirations-heading {
+    padding: 26px 18px;
+  }
+
+  .inspirations-heading h1 {
+    font-size: 26px;
+  }
+
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .inspiration-card {
+    min-height: 170px;
+  }
+}
