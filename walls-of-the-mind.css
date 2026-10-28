@@ -834,7 +834,7 @@ h3,
 }
 
 .content {
-    max-width: 750px;
+    max-width: 750px !important;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
