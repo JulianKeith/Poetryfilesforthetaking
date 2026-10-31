@@ -511,7 +511,7 @@ Candlelight	In a dark room illuminated by a hundred candles.
                         next: "city"
                     },
                     {
-                        text: "Basking in the shade of a tree.",
+                        text: "Under a great forest, the trees higher than the sky.",
                         next: "nature"
                     },
                     {
@@ -520,6 +520,248 @@ Candlelight	In a dark room illuminated by a hundred candles.
                     }
                 ]
             },
+
+            nature: {
+                question: "What do you enjoy most about nature?",
+
+                choices: [
+                    {
+                    text: "The four seasons, the leaves changing colour.",
+                    next: 'season',
+                    },
+                    {
+                    text: "Growing plants, watching it take shape and unfold.",
+                    next: 'grow',
+                    },
+                    {
+                    text: "The landscapes amaze me, the bizzare terrain exciting.",
+                    next: 'landscape',
+                    },
+                ],
+            },
+            landscape: {
+                question: "What sort of landscape do you enjoy most?",
+
+                choices: [
+                    {
+                    text: "Mountains, the jagged edges never cease to amaze.",
+                    next: 'mountain',
+                    },
+                    {
+                    text: "The grasslands and forest in every shade of green.",
+                    next: 'plains',
+                    },
+                    {
+                    text: "The arid hot air of the desert keeps my throat parched.",
+                    next: 'desert',
+                    },
+                    {
+                    text: "The depths of the underwater beckons to me.",
+                    next: 'underwater',
+                    },
+                ]
+            },
+            grow: {
+                question: "What type of plant do you grow?",
+
+                choices: [
+                    {
+                        text: 'Herbs, small plants with soft green stems.',
+                        next: 'herb'
+                    },
+                    {
+                        text: 'Shrubs, medium bushy plants with several wooden stems.',
+                        next: 'shrub'
+                    },
+                    {
+                        text: 'Trees, large plants, with a strong and thick wooden stem.',
+                        next: 'tree'
+                    },
+                    {
+                        text: 'Climbers, plants with weak stems that need support growing taller.',
+                        next: 'climber'
+                    },
+                    
+
+             /*   Plant category	Plant 1	Plant 2
+Herbs	Sunflower 🌻	Mint 🌿
+Shrubs	Rose 🌹	Hibiscus 🌺
+Trees	Mango 🥭	Oak 🌳
+Climbers	Grapevine 🍇	Pea plant 🫛*/
+                ]
+            },
+            herb: {
+    question: "What kind of growth catches your eye?",
+
+    choices: [
+        {
+            text: "A bright flower, reaching towards the sunlight.",
+
+            keywords: [
+                'sunflower',
+                'yellow',
+                'petals',
+                'seeds',
+                'sunlight',
+                'bright',
+                'tall'
+            ],
+            summary: 'A sunflower, standing tall beneath the sunlight.'
+        },
+        {
+            text: "Small green leaves, fresh and full of fragrance.",
+
+            keywords: [
+                'mint',
+                'leaves',
+                'green',
+                'fresh',
+                'fragrant',
+                'soft',
+                'herb'
+            ],
+            summary: 'Fresh mint leaves growing close together.'
+        },
+    ]
+},
+
+shrub: {
+    question: "What kind of flowering bush do you find?",
+
+    choices: [
+        {
+            text: "Delicate roses, blooming among thorny branches.",
+
+            keywords: [
+                'rose',
+                'flowers',
+                'thorns',
+                'petals',
+                'red',
+                'pink',
+                'bloom'
+            ],
+            summary: 'A rose bush, blooming with delicate flowers.'
+        },
+        {
+            text: "Large tropical flowers, surrounded by lush leaves.",
+
+            keywords: [
+                'hibiscus',
+                'tropical',
+                'flowers',
+                'red',
+                'pink',
+                'leaves',
+                'lush'
+            ],
+            summary: 'A hibiscus shrub, flourishing with colourful flowers.'
+        },
+    ]
+},
+
+tree: {
+    question: "What kind of tree stands before you?",
+
+    choices: [
+        {
+            text: "A sturdy tree, bearing sweet and golden fruit.",
+
+            keywords: [
+                'mango',
+                'fruit',
+                'leaves',
+                'green',
+                'branches',
+                'tropical',
+                'golden'
+            ],
+            summary: 'A mango tree, growing heavy with sweet fruit.'
+        },
+        {
+            text: "A towering tree, its branches stretching wide.",
+
+            keywords: [
+                'oak',
+                'trunk',
+                'bark',
+                'branches',
+                'tall',
+                'acorns',
+                'forest'
+            ],
+            summary: 'A mighty oak tree, standing firm in the forest.'
+        },
+    ]
+},
+
+climber: {
+    question: "How does the plant make its way upwards?",
+
+    choices: [
+        {
+            text: "Twisting around its support, bearing clusters of fruit.",
+
+            keywords: [
+                'grapevine',
+                'grapes',
+                'vines',
+                'twisting',
+                'climbing',
+                'clusters',
+                'purple'
+            ],
+            summary: 'A grapevine, winding around its support.'
+        },
+        {
+            text: "Clinging and reaching upwards, with little pods hanging down.",
+
+            keywords: [
+                'pea',
+                'pods',
+                'green',
+                'tendrils',
+                'climbing',
+                'support',
+                'leaves'
+            ],
+            summary: 'A pea plant, climbing with its delicate tendrils.'
+        },
+    ]
+},
+            mountain: {
+                question: "How high does it reach?",
+
+                choices: [
+                    {
+                    text: "Higher than the clouds, and the sky itself.",
+                    
+                    keywords: [
+                        'jagged',
+                        'rocks',
+                        'mountain',
+                        'climbing',
+                        'heightened',
+                        'grey',
+                        'slope'
+                    ],
+                      summary: 'Climbing the peak of the tallest mountains.'  
+                    },
+                    {
+                    text: "Not too high up, the slope covered in grass.",
+
+                    keywords: [
+                        'hill',
+                        'grassy',
+                        'green',
+                        'slope',
+                        'dense',
+                        'curved'
+                    ],
+                       summary: 'An ordinary hill, green with grass.'
+                    },
+                ]
+            }, 
             time: {
                 question: "What time is it?",
 
@@ -578,7 +820,7 @@ Candlelight	In a dark room illuminated by a hundred candles.
                 ]
             },
 
-            nature: {
+            season: {
                 question: "What colour are the leaves?",
 
                 choices: [
