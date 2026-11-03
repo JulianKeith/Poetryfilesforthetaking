@@ -30,6 +30,7 @@ body {
             box-sizing: border-box;
 
             transition: background 0.8s ease;
+            z-index: 10;
         }
 
         .logo {
@@ -956,4 +957,54 @@ nav {
     .poem-box {
         transition: none;
     }
+}
+
+/* FIX NAVIGATION BAR VISIBILITY */
+
+nav.first {
+    display: flex !important;
+    position: relative !important;
+    z-index: 9999 !important;
+
+    width: 100%;
+    min-height: 80px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        110deg,
+        #252436 0%,
+        #292B46 55%,
+        #354C78 100%
+    );
+
+    border-radius: 16px;
+}
+
+/* Keep navigation links visible */
+nav.first ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav.first a {
+    color: #F0E6D2 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.first a.selected {
+  color: #E4C878;
+  font-weight: bold;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Keep background effects behind navigation */
+#treeCanvas,
+#leafTrailCanvas,
+#celestial-bg,
+.memory-background {
+    z-index: 0;
+    pointer-events: none;
 }
