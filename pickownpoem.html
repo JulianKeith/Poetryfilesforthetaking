@@ -17,25 +17,17 @@
            GLOBAL STYLES
 
            Setting	Choice text
-Ocean	Beneath the waves, where the world turns blue.
-Winter	In a snow-covered town that has forgotten time.
-Autumn	Along a golden path buried in fallen leaves.
-Spring	Inside a garden waking up after a long sleep.
 Abandoned	Inside an abandoned house, untouched for decades.
 School	In an empty school hallway after the final bell.
 Bedroom	Inside a bedroom full of memories and unfinished dreams.
 Train	Aboard a train travelling through an unfamiliar landscape.
 Rain	Beneath an awning while rain floods the streets.
-Sunrise	On a hill as the first light spills across the horizon.
-Sunset	On a rooftop watching the sun disappear.
-Fog	In a village swallowed by thick, silver fog.
 Space	Floating through an endless universe of stars.
 Fantasy	Inside a forgotten kingdom where magic still lingers.
 Time	In a room where every clock shows a different hour.
 Carnival	At an amusement park long after closing time.
 Library	In an ancient library where the books whisper.
 Mirrors	Inside a hall of mirrors where nothing looks quite right.
-Greenhouse	In a glass greenhouse overtaken by wild plants.
 Candlelight	In a dark room illuminated by a hundred candles.
         ========================= */
 
@@ -489,7 +481,7 @@ Candlelight	In a dark room illuminated by a hundred candles.
                 class="restart-btn"
                 id="restart-btn"
             >
-                ↻ Restart and choose again
+                Restart and choose again
             </button>
 
         </section>
@@ -516,11 +508,63 @@ Candlelight	In a dark room illuminated by a hundred candles.
                     },
                     {
                         text: "Unbeknownst to all, floating in the space of time and hours.",
+                        next: "space"
+                    },
+                    {
+                        text: "Watching the window, gazing at the sun and skies.",
                         next: "time"
                     }
                 ]
             },
+            space: {
+                question: 'Where are you floating?',
 
+                choices: [
+                    {
+                        text: 'Nowhere and everywhere, all place and time is lost.',
+                        next: 'drift'
+                    },
+                    {
+                        text: 'Drifting in space, watching the stars pass by.',
+                        next: 'cosmic'
+                    },
+                    {
+                        text: 'in a hall full of mirrors where nothing looks quite right.',
+                        next: 'mirror'
+                    }
+                ]
+
+            },
+            drift: {
+              question: "How often does the clock tick?",
+              
+              choices: [
+                {
+                    text: "Fast, like it's rushing toward something important.",
+
+                    keywords: [
+                        'time',
+                        'tick',
+                        'bronze',
+                        'nowhere',
+                        'abstract',
+                        'clock'
+                    ]
+                },
+                {
+                text: 'Slow, the minutes acting like hours.',
+
+                keywords: [
+                    'slow',
+                    'time',
+                    'clock',
+                    'bronze',
+                    'nowhere',
+                    'drift'
+                ]
+            }
+              ]
+            },
             nature: {
                 question: "What do you enjoy most about nature?",
 
@@ -581,13 +625,7 @@ Candlelight	In a dark room illuminated by a hundred candles.
                         text: 'Climbers, plants with weak stems that need support growing taller.',
                         next: 'climber'
                     },
-                    
-
-             /*   Plant category	Plant 1	Plant 2
-Herbs	Sunflower 🌻	Mint 🌿
-Shrubs	Rose 🌹	Hibiscus 🌺
-Trees	Mango 🥭	Oak 🌳
-Climbers	Grapevine 🍇	Pea plant 🫛*/
+                
                 ]
             },
             herb: {
