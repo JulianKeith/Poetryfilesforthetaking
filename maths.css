@@ -21,57 +21,68 @@ body {
 
 /* Navigation */
 
-nav.first,
-.first {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-    min-height: 70px;
-    padding: 12px 5%;
-    box-sizing: border-box;
-    background: rgba(5, 8, 15, 0.92);
-    border: none;
-    border-bottom: 1px solid rgba(65, 145, 255, 0.3);
-    border-radius: 0;
-    box-shadow: 0 4px 24px rgba(0, 100, 255, 0.08);
-    margin-bottom: 25px;
-}
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
 
-.first ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+        .first {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
 
-.first a {
-    color: #b9cfff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.25s ease, text-shadow 0.25s ease;
-}
+            width: 100%;
+            min-height: 80px;
+            padding: 10px 25px;
+            margin: 0 auto 30px;
 
-.first a:hover {
-    color: #55cfff;
-    text-shadow: 0 0 10px rgba(55, 180, 255, 0.65);
-}
+            background: linear-gradient(
+                110deg,
+                #252436 0%,
+                #292B46 55%,
+                #354C78 100%
+            );
 
-/* Logo */
+            border-radius: 16px;
+            box-sizing: border-box;
 
-.logo {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    display: block;
-    flex-shrink: 0;
-    border-radius: 50%;
-}
+            transition: background 0.8s ease;
+        }
+
+        .logo {
+            display: block;
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .first ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px 20px;
+
+            list-style: none;
+            margin: 0 0 0 auto;
+            padding: 0;
+        }
+
+        .first a {
+            display: inline-block;
+            color: #F0E6D2;
+            font-family: 'Unkempt', cursive;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .first a:hover,
+        .first a:focus-visible {
+            color: #E4C878;
+        }
 
 /* Main content */
 

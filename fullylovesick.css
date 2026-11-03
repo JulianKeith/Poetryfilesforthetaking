@@ -28,68 +28,68 @@ body {
     transition: color 0.5s ease;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
 
-.first {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    gap: 20px;
-    justify-content: right;
-    align-items: center;
+        .first {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
 
-    width: 100%;
-    min-height: 70px;
-    padding: 15px 25px;
-    margin-bottom: 25px;
-    box-sizing: border-box;
+            width: 100%;
+            min-height: 80px;
+            padding: 10px 25px;
+            margin: 0 auto 30px;
 
-    background: linear-gradient(
-        110deg,
-        #252436 0%,
-        #292B46 55%,
-        #354C78 100%
-    );
+            background: linear-gradient(
+                110deg,
+                #252436 0%,
+                #292B46 55%,
+                #354C78 100%
+            );
 
-    border-radius: 16px;
-    transition: background-color 0.8s ease, background 0.8s ease;
-}
+            border-radius: 16px;
+            box-sizing: border-box;
 
-.first ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    list-style: none;
-    gap: 20px;
+            transition: background 0.8s ease;
+        }
 
-    margin: 0 0 0 auto !important;
-    padding: 0;
-}
+        .logo {
+            display: block;
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
 
-.first a {
-    display: inline-block;
-    text-decoration: none;
-    font-family: 'Unkempt', cursive;
-    font-size: 18px;
-    color: #F0E6D2;
-    transition: color 0.3s ease;
-}
+        .first ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px 20px;
 
-.first a:hover {
-    color: #E4C878;
-}
+            list-style: none;
+            margin: 0 0 0 auto;
+            padding: 0;
+        }
 
-.logo {
-    display: block;
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: auto !important;
-}
+        .first a {
+            display: inline-block;
+            color: #F0E6D2;
+            font-family: 'Unkempt', cursive;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .first a:hover,
+        .first a:focus-visible {
+            color: #E4C878;
+        }
 
 /* =========================
    PAGE CONTENT
